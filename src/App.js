@@ -1,11 +1,14 @@
+import React from 'react';
 import './App.css';
+import * as Components from './components';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      Hello World !
+    <div id='app'>
+      <Components.Bowl diameter="30" />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
