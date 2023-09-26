@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Bowl.css';
 
 const Bowl = ({ diameter }) => {
+    const [currentDiameter, setCurrentDiameter] = useState(diameter);
+
+    useEffect(() => {
+      setCurrentDiameter(diameter);
+    }, [diameter]);
+
     // updating the blur effect intensity for the forms
     var formBlurIntensity = -1.11 * diameter + 83.33;
     var mySvg = document.getElementsByClassName('form');
@@ -18,11 +24,8 @@ const Bowl = ({ diameter }) => {
     var strokeBlurIntensity = diameter / 2;
     var myStroke = document.getElementsByClassName('white-stroke')[0];
     if (myStroke) {
-        console.log("myStroke exists")
         const feGaussianBlurElement2 = myStroke.querySelector("feGaussianBlur");
-        console.log(feGaussianBlurElement2)
         feGaussianBlurElement2.setAttribute("stdDeviation", strokeBlurIntensity);
-        console.log(feGaussianBlurElement2)
     }
 
     return (

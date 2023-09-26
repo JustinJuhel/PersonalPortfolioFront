@@ -1,0 +1,86 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    background: var(--black-10);
+    backdrop-filter: blur(0.5rem);
+}
+
+.generic-button {
+    padding: 4rem 0rem;
+
+    box-shadow: -8px 8px 16px 0px rgba(0, 0, 0, 0.25);
+}
+
+.generic-button>p {
+    color: var(--color-tertiary);
+    font-family: var(--font-paragraph);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 115%;
+
+    transform: rotate(-90deg);
+}
+
+.language-button {
+    padding: 0.75rem 1rem;
+
+    color: var(--color-tertiary);
+    text-align: right;
+    font-family: var(--font-paragraph);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    transition: all 0.1s ease-in-out;
+}
+
+.language-button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.light-mode-button {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+
+    width: 3rem;
+    height: 3rem;
+
+    /* border: 1px solid white; */
+}
+
+.light-mode-button>svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* border: 1px solid white; */
+}
+
+.light-mode-button:hover {
+    cursor: pointer;
+}
+
+.light-mode-button:hover svg .sun-rays {
+    transform-origin: center center;
+    animation: sun-rotation infinite 4s linear;
+}
+
+@keyframes sun-rotation {
+    0% {
+        transform: scale(1.1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(180deg);
+    }
+
+    100% {
+        transform: scale(1.1) rotate(360deg);
+    }
+}

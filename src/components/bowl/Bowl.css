@@ -4,7 +4,7 @@
     box-shadow: 3.125rem 3.125rem 5.25rem #090c11,
         -3.125rem -3.125rem 5.25rem #131a25;
 
-    /* animation: bowl-animation infinite 4s ease-in-out; */
+    animation: bowl-animation infinite 4s ease-in-out;
     /* transition: all 0.1s ease-in-out; */
 }
 
@@ -69,15 +69,15 @@
 
 @keyframes bowl-animation {
     0% {
-        box-shadow: 3.125rem 3.125rem 5.25rem #090c11,
-            -3.125rem -3.125rem 5.25rem #131a25;
+        /* box-shadow: 3.125rem 3.125rem 5.25rem #090c11,
+            -3.125rem -3.125rem 5.25rem #131a25; */
         transform: scale(1.0);
     }
 
     75% {
-        box-shadow: 1.56rem 1.56rem 2.625rem #090c11,
-            -1.56rem -1.56rem 2.625rem #131a25;
-        transform: scale(1.005);
+        /* box-shadow: 1.56rem 1.56rem 2.625rem #090c11,
+            -1.56rem -1.56rem 2.625rem #131a25; */
+        transform: scale(1.01);
     }
 }
 
