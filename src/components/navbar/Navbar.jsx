@@ -7,7 +7,7 @@ const Navbar = () => {
         <div id='navbar'>
             <div className='navbar-content'>
                 <div className='navbar-top'>
-                    <div className='navbar__bowl-container'><Components.Bowl diameter={3} /></div>
+                    <div className='navbar__bowl-container'><Components.Bowl /></div>
                     <Components.LanguageButton />
                     <Components.LightModeButton />
                 </div>

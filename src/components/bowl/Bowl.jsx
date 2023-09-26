@@ -1,35 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import './Bowl.css';
 
-const Bowl = ({ diameter }) => {
-    const [currentDiameter, setCurrentDiameter] = useState(diameter);
+const Bowl = () => {
 
-    useEffect(() => {
-      setCurrentDiameter(diameter);
-    }, [diameter]);
+    // // updating the blur effect intensity for the forms
+    // var formBlurIntensity = -1.11 * diameter + 83.33;
+    // var mySvg = document.getElementsByClassName('form');
+    // if (mySvg) {
+    //     for (const svg of mySvg) {
+    //         const feGaussianBlurElement = svg.querySelector("feGaussianBlur");
+    //         feGaussianBlurElement.setAttribute("stdDeviation", formBlurIntensity);
+    //     }
+    // } else {
+    //     console.log("'form' introuvable")
+    // }
 
-    // updating the blur effect intensity for the forms
-    var formBlurIntensity = -1.11 * diameter + 83.33;
-    var mySvg = document.getElementsByClassName('form');
-    if (mySvg) {
-        for (const svg of mySvg) {
-            const feGaussianBlurElement = svg.querySelector("feGaussianBlur");
-            feGaussianBlurElement.setAttribute("stdDeviation", formBlurIntensity);
-        }
-    } else {
-        console.log("'form' introuvable")
-    }
-
-    // updating the blur effect intensity for the white stroke
-    var strokeBlurIntensity = diameter / 2;
-    var myStroke = document.getElementsByClassName('white-stroke')[0];
-    if (myStroke) {
-        const feGaussianBlurElement2 = myStroke.querySelector("feGaussianBlur");
-        feGaussianBlurElement2.setAttribute("stdDeviation", strokeBlurIntensity);
-    }
+    // // updating the blur effect intensity for the white stroke
+    // var strokeBlurIntensity = diameter / 2;
+    // var myStroke = document.getElementsByClassName('white-stroke')[0];
+    // if (myStroke) {
+    //     const feGaussianBlurElement2 = myStroke.querySelector("feGaussianBlur");
+    //     feGaussianBlurElement2.setAttribute("stdDeviation", strokeBlurIntensity);
+    // }
 
     return (
-        <div className='bowl-container' style={{ width: diameter + "rem" }}>
+        <div className='bowl-container'>
             <div className='bowl'>
                 <svg className="white-stroke" width="717" height="717" viewBox="0 0 717 717" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_f_53_698)">
