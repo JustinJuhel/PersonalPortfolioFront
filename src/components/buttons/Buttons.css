@@ -5,6 +5,13 @@
     border-radius: 2rem;
     background: var(--black-10);
     backdrop-filter: blur(0.5rem);
+
+    transition: all 0.1s ease-in-out;
+}
+
+.button:hover {
+    background-color: var(--white-10);
+    cursor: pointer;
 }
 
 .generic-button {
@@ -38,11 +45,6 @@
     transition: all 0.1s ease-in-out;
 }
 
-.language-button:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
 .light-mode-button {
     display: flex;
     align-items: center;
@@ -62,10 +64,6 @@
     /* border: 1px solid white; */
 }
 
-.light-mode-button:hover {
-    cursor: pointer;
-}
-
 .light-mode-button:hover svg .sun-rays {
     transform-origin: center center;
     animation: sun-rotation infinite 4s linear;
@@ -82,5 +80,64 @@
 
     100% {
         transform: scale(1.1) rotate(360deg);
+    }
+}
+
+.contact-button {
+    z-index: 1;
+    padding: 1rem 4em;
+    border-radius: 2rem;
+    backdrop-filter: blur(2rem);
+}
+
+.contact-button>p {
+    color: var(--color-primary);
+
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.contact-button:hover {
+    background-color: var(--white-50);
+    cursor: pointer;
+    animation: contact-button-hover forwards 0.1s ease-in-out;
+}
+
+.contact-button>p {
+    transition: all 0.1s ease-in-out;
+}
+
+.contact-button:hover>p {
+    color: var(--color-secondary);
+    animation: contact-button-p-hover forwards 0.1s ease-in-out
+}
+
+@keyframes contact-button-hover {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes contact-button-p-hover {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9090909);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }

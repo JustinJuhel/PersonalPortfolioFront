@@ -43,4 +43,14 @@ const LightModeButton = () => {
     )
 }
 
-export { NavigationButton, LanguageButton, LightModeButton }
+const ContactButton = ({ text }) => {
+    return (
+        <div className='contact-button button'>
+            <p>{text}</p>
+        </div>
+    )
+}
+
+export default ContactButton
+
+export { NavigationButton, LanguageButton, LightModeButton, ContactButton }

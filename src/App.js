@@ -8,10 +8,11 @@ import * as Pages from './pages';
 const App = () => {
     return (
         <div>
-            <BrowserRouter> 
+            <BrowserRouter>
                 <Components.Navbar />
                 <Routes>
                     <Route path="/" element={<Pages.HomePage />} />
+                    <Route path="/contact" element={<Pages.ContactPage />} />
                 </Routes>
             </BrowserRouter>
         </div>
