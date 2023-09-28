@@ -2,21 +2,26 @@
     --color-background-dark: #0E131B;
     --color-background-light: #DFE6F1;
 
+    --background-first-gradient: radial-gradient(25rem 25rem at -5% 10%, rgb(20, 26, 34) 50%, rgba(14, 19, 27, 0) 100%);
+    --background-second-gradient: radial-gradient(25rem 25rem at 110% 45%, rgb(20, 26, 34) 50%, rgba(14, 19, 27, 0) 100%);
+    --background-third-gradient: radial-gradient(25rem 25rem at 0% 90%, rgb(20, 26, 34) 50%, rgba(14, 19, 27, 0) 100%);
+
+
     --color-primary: #C3D3EE;
     --color-secondary: #384B6B;
     --color-tertiary: #7AA3EB;
 
-    --black-100 : rgba(2,20,27,1);
-    --black-75 : rgba(2,20,27,0.75);
-    --black-50 : rgba(2,20,27,0.5);
-    --black-25 : rgba(2,20,27,0.25);
-    --black-10 : rgba(2,20,27,0.10);
+    --black-100: rgba(2, 20, 27, 1);
+    --black-75: rgba(2, 20, 27, 0.75);
+    --black-50: rgba(2, 20, 27, 0.5);
+    --black-25: rgba(2, 20, 27, 0.25);
+    --black-10: rgba(2, 20, 27, 0.10);
 
-    --white-100 : rgba(247,253,255,1);
-    --white-75 : rgba(247,253,255,0.75);
-    --white-50 : rgba(247,253,255,0.5);
-    --white-25 : rgba(247,253,255,0.25);
-    --white-10 : rgba(247,253,255,0.10);
+    --white-100: rgba(247, 253, 255, 1);
+    --white-75: rgba(247, 253, 255, 0.75);
+    --white-50: rgba(247, 253, 255, 0.5);
+    --white-25: rgba(247, 253, 255, 0.25);
+    --white-10: rgba(247, 253, 255, 0.10);
 
     --font-heading: Zilla Slab;
     --font-paragraph: 'Manrope', sans-serif;

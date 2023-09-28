@@ -84,10 +84,11 @@
 }
 
 .contact-button {
-    z-index: 1;
     padding: 1rem 4em;
     border-radius: 2rem;
     backdrop-filter: blur(2rem);
+
+    /* border: 1px solid white; */
 }
 
 .contact-button>p {

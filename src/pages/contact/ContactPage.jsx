@@ -4,7 +4,11 @@ import * as Components from '../../components';
 
 const ContactPage = () => {
     return (
-        <div className='contact-page'>
+        <div id='contact-page'>
+
+            <div className='contact-page__background-gradients'></div>
+
+
             <div className='contact-page__title'>
                 <h1>Contact</h1>
             </div>
@@ -18,7 +22,10 @@ const ContactPage = () => {
                 <div className='linkedin'><Components.ContactButton text={"LinkedIn"} /></div>
                 <div className='mail'><Components.ContactButton text={"Mail"} /></div>
             </div>
+
         </div>
+
+
     )
 }
 
