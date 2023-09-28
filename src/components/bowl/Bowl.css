@@ -3,8 +3,8 @@
     height: 100%;
     border-radius: 50%;
 
-    box-shadow: 3.125rem 3.125rem 5.25rem #090c11,
-        -3.125rem -3.125rem 5.25rem #131a25;
+    box-shadow: 2rem 2rem 4rem #06080b,
+        -2rem -2rem 4rem #161e2b;
 
     animation: bowl-animation infinite 4s ease-in-out;
 
