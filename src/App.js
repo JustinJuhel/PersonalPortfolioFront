@@ -12,6 +12,7 @@ const App = () => {
                     <Routes>
                         <Route path="/" element={<Pages.HomePage />} />
                         <Route path="/contact" element={<Pages.ContactPage />} />
+                        <Route path="/about" element={<Pages.AboutPage />} />
                     </Routes>
             </BrowserRouter>
         </div>

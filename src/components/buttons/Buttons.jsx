@@ -51,6 +51,12 @@ const ContactButton = ({ text }) => {
     )
 }
 
-export default ContactButton
+const AboutMeButton = ({ text }) => {
+    return (
+        <div className='about-me-button button'>
+            <p>{text}</p>
+        </div>
+    )
+}
 
-export { NavigationButton, LanguageButton, LightModeButton, ContactButton }
+export { NavigationButton, LanguageButton, LightModeButton, ContactButton, AboutMeButton }
