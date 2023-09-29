@@ -14,7 +14,7 @@ const Navbar = () => {
                     <Components.LightModeButton />
                 </div>
                 <div className='navbar-bottom'>
-                    <div className='navigation-button'><Components.NavigationButton text='Work' /></div>
+                    <div className='navigation-button' onClick={() => { navigate('/work') }}><Components.NavigationButton text='Work' /></div>
                     <div className='navigation-button' onClick={() => { navigate('/about') }}><Components.NavigationButton text='About' /></div>
                     <div className='navigation-button' onClick={() => { navigate('/contact') }}><Components.NavigationButton text='Contact' /></div>
                 </div>

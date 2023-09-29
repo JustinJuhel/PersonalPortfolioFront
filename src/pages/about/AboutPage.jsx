@@ -29,33 +29,33 @@ const AboutPage = () => {
                     <div className='tools__code-editors tools-section'>
                         <p>Code editors</p>
                         <div className='tools__code-editors__logos dev-tools__displayer'>
-                            <img src={Assets.code_editors_map.vscode} alt="code-editor" />
-                            <img src={Assets.code_editors_map.eclipse} alt="code-editor" />
+                            <img src={Assets.dev_tools_map.vscode} alt="code-editor" />
+                            <img src={Assets.dev_tools_map.eclipse} alt="code-editor" />
                         </div>
                     </div>
                     <div className='tools__communication tools-section'>
                         <p>Communication tools</p>
                         <div className='tools__communication__logos dev-tools__displayer'>
-                            <img src={Assets.communication_tools_map.git} alt="communication-tool" />
-                            <img src={Assets.communication_tools_map.github} alt="communication-tool" />
+                            <img src={Assets.dev_tools_map.git} alt="communication-tool" />
+                            <img src={Assets.dev_tools_map.github} alt="communication-tool" />
                         </div>
                     </div>
                     <div className='tools__design tools-section'>
                         <p>Design tools</p>
                         <div className='tools__design__logos dev-tools__displayer'>
-                            <img src={Assets.design_tools_map.figma} alt="design-tool" />
-                            <img src={Assets.design_tools_map.starUML} alt="design-tool" />
+                            <img src={Assets.dev_tools_map.figma} alt="design-tool" />
+                            <img src={Assets.dev_tools_map.starUML} alt="design-tool" />
                             {/* <img src={Assets.design_tools_map.inkscape} alt="design-tool" /> */}
                         </div>
                     </div>
                     <div className='tools__languages tools-section'>
                         <p>Languages</p>
                         <div className='tools__languages__logos dev-tools__displayer'>
-                        <img src={Assets.languages_map.react} alt="language" />
-                        <img src={Assets.languages_map.html} alt="language" />
-                        <img src={Assets.languages_map.javascript} alt="language" />
-                        <img src={Assets.languages_map.css} alt="language" />
-                        <img src={Assets.languages_map.java} alt="language" />
+                        <img src={Assets.dev_tools_map.react} alt="language" />
+                        <img src={Assets.dev_tools_map.html} alt="language" />
+                        <img src={Assets.dev_tools_map.javascript} alt="language" />
+                        <img src={Assets.dev_tools_map.css} alt="language" />
+                        <img src={Assets.dev_tools_map.java} alt="language" />
                         </div>
                     </div>
                 </div>

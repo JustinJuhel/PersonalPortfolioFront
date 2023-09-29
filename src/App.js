@@ -11,8 +11,9 @@ const App = () => {
                     <Components.Navbar />
                     <Routes>
                         <Route path="/" element={<Pages.HomePage />} />
-                        <Route path="/contact" element={<Pages.ContactPage />} />
+                        <Route path="/work" element={<Pages.WorkPage />} />
                         <Route path="/about" element={<Pages.AboutPage />} />
+                        <Route path="/contact" element={<Pages.ContactPage />} />
                     </Routes>
             </BrowserRouter>
         </div>

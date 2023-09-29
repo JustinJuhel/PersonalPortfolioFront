@@ -8,7 +8,6 @@ const ContactPage = () => {
 
             <div className='contact-page__background-gradients'></div>
 
-
             <div className='contact-page__title'>
                 <h1>Contact</h1>
             </div>
