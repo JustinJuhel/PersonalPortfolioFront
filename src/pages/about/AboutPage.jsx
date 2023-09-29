@@ -1,10 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./AboutPage.css";
 import * as Components from '../../components';
 import * as Assets from '../../assets';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+function partition(data, func) {
+    const map = new Map();
+    data.forEach((item) => {
+        let array = map.get(func(item));
+        if (!array) {
+            array = [];
+            map.set(func(item), array);
+        }
+        array.push(item);
+    })
+    return map
+}
 
 const AboutPage = () => {
+    const [devTools, setDevTools] = useState(undefined);
+    useEffect(() => {
+        axios.get("http://localhost:8000/devtools/get_tools").then(data => data.data ).then(data => { setDevTools(data.data.filter((item) => item.used==="used")); })
+    }, [])
+    if (devTools) {
+        console.log(partition(devTools, (item) => item.type))
+
+    }
+
+    const title_map = {
+        "code_editor": "Code Editors",
+        "communication_tool": "Communication",
+        "design_tool": "Design",
+        "language": "Languages"
+    }
+
     let navigate = useNavigate();
     return (
         <div className='about-page'>
@@ -26,38 +56,17 @@ const AboutPage = () => {
                 </div>
                 <div className='about-page__tools about-page__infos-displayer'>
                     <h1>The tools I develop with :</h1>
-                    <div className='tools__code-editors tools-section'>
-                        <p>Code editors</p>
-                        <div className='tools__code-editors__logos dev-tools__displayer'>
-                            <img src={Assets.dev_tools_map.vscode} alt="code-editor" />
-                            <img src={Assets.dev_tools_map.eclipse} alt="code-editor" />
-                        </div>
-                    </div>
-                    <div className='tools__communication tools-section'>
-                        <p>Communication tools</p>
-                        <div className='tools__communication__logos dev-tools__displayer'>
-                            <img src={Assets.dev_tools_map.git} alt="communication-tool" />
-                            <img src={Assets.dev_tools_map.github} alt="communication-tool" />
-                        </div>
-                    </div>
-                    <div className='tools__design tools-section'>
-                        <p>Design tools</p>
-                        <div className='tools__design__logos dev-tools__displayer'>
-                            <img src={Assets.dev_tools_map.figma} alt="design-tool" />
-                            <img src={Assets.dev_tools_map.starUML} alt="design-tool" />
-                            {/* <img src={Assets.design_tools_map.inkscape} alt="design-tool" /> */}
-                        </div>
-                    </div>
-                    <div className='tools__languages tools-section'>
-                        <p>Languages</p>
-                        <div className='tools__languages__logos dev-tools__displayer'>
-                        <img src={Assets.dev_tools_map.react} alt="language" />
-                        <img src={Assets.dev_tools_map.html} alt="language" />
-                        <img src={Assets.dev_tools_map.javascript} alt="language" />
-                        <img src={Assets.dev_tools_map.css} alt="language" />
-                        <img src={Assets.dev_tools_map.java} alt="language" />
-                        </div>
-                    </div>
+                    {!devTools ? null :
+                        Array.from(partition(devTools, (item) => item.type)).map(([type, tools]) =>
+                            <div className='tools-section'>
+                                <p>{title_map[type]}</p>
+                                <div className='dev-tools__displayer'>
+                                    {tools.map((tool) =>
+                                        <img src={Assets.dev_tools_map[tool.name]} alt={tool.name} />
+                                    )}
+                                </div>
+                            </div>
+                        )}
                 </div>
             </div>
 

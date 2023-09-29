@@ -18,6 +18,7 @@ const dev_tools_map = {
     css: Languages.css,
     java: Languages.java,
     javascript: Languages.javascript,
+    typescript: Languages.typescript,
     react: Languages.react
 }
 const project_logos_map = { cs_league: CSLeague.logo }
