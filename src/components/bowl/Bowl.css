@@ -47,7 +47,7 @@
     filter: blur(0.3rem);
 
     z-index: 1;
-    animation: first-form-animation infinite 2s ease-in-out;
+    animation: first-form-animation infinite 3s ease-in-out;
 }
 
 .second-form {
@@ -90,7 +90,7 @@
     }
 
     66% {
-        transform: translate(1.6%, -1%) scale(1.05) rotate(2.5deg);
+        transform: translate(1.6%, -1%) scale(1.075) rotate(2.5deg);
     }
 }
 
@@ -100,6 +100,6 @@
     }
 
     33% {
-        transform: translate(-1.6%, 1%) scale(0.95) rotate(-2.5deg);
+        transform: translate(-1.6%, 2%) scale(0.95) rotate(-7.5deg);
     }
 }
