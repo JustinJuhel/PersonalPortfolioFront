@@ -11,8 +11,8 @@ const WorkPage = () => {
             <div className='work-page__bowl'><Components.Bowl /></div>
             <div className='work-page__title'><h1>Work</h1></div>
             <div className='work-page__projects-container'>
-                <Components.Project />
-                <Components.Project />
+                <Components.Project id={0} />
+                <Components.Project id={1} />
             </div>
 
         </div>

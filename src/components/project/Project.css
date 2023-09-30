@@ -1,4 +1,4 @@
-#project {
+/* .project {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,11 +6,13 @@
 
     z-index: 2;
     gap: 2rem;
+    padding: 0rem 4rem;
+    width: 100%;
 
-    /* border: 1px solid white; */
+    border: 1px solid white;
 
     transition: all 0.1s ease-in-out;
-}
+} */
 
 .project-logo-button {
     display: flex;
@@ -36,17 +38,6 @@
 
 .project-logo-button>img {
     width: 10rem;
-}
-
-.project-logo-button>h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    font-style: normal;
-    font-weight: 900;
-    background: linear-gradient(180deg, #F00 0%, #802626 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .project-infos {

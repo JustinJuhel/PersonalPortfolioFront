@@ -1,28 +1,65 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Project.css';
 import * as Assets from '../../assets';
+import axios from 'axios';
 
-const Project = () => {
+const Project = ({ id }) => {
+    // let id = 0;
+    const [projects, setProjects] = useState(undefined);
+    useEffect(() => {
+        axios.get("http://localhost:8000/projects/get").then(data => data.data).then(data => { setProjects(data.data); })
+    }, []);
+
+    if (!projects) {
+        return (<div><p>This project is invalid</p></div>)
+    }
+
+    let project = projects[id];
+
+    const tools_names = project.tools.split(",");
+
+    const project_name_style = {
+        fontFamily: project.name_font,
+
+        fontSize: "2rem",
+        fontStyle: "normal",
+        fontWeight: 900,
+        textAlign: "center",
+        backgroundClip: "text",
+        background: project.name_color,
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+    };
+
+    const project_style = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: id % 2 == 1 ? 'row-reverse' : 'row',
+        zIndex: 2,
+        gap: '2rem',
+        padding: '0rem 4rem',
+        width: '100%',
+        transition: 'all 0.1s ease-in-out',
+    };
+
     return (
-        <div id='project'>
+        <div className='project' style={project_style}>
             <div className='project-logo-button'>
-                <img src={Assets.project_logos_map.cs_league} alt="project-logo" />
-                <h1>CS LEAGUE</h1>
+                <img src={!projects ? null : Assets.project_logos_map[project.logo]} alt="project-logo" />
+                <h1 style={project_name_style}>{!projects ? null : project.name}</h1>
             </div>
             <div className='project-infos'>
                 <div className='project-infos__desc'>
-                    <h1>CS League - FrontEnd Design</h1>
-                    <p>Co-development of a student association’s website, which allows users to connect themselves and bet freely on different bet campaigns.</p>
+                    <h1>{!projects ? null : project.title}</h1>
+                    <p>{!projects ? null : project.description}</p>
                 </div>
                 <div className='project-infos__tools'>
-                    <img src={Assets.dev_tools_map.vscode} alt="dev-tool" />
-                    <img src={Assets.dev_tools_map.figma} alt="dev-tool" />
-                    <img src={Assets.dev_tools_map.git} alt="dev-tool" />
-                    <img src={Assets.dev_tools_map.github} alt="dev-tool" />
-                    <img src={Assets.dev_tools_map.react} alt="dev-tool" />
-                    <img src={Assets.dev_tools_map.javascript} alt="dev-tool" />
-                    <img src={Assets.dev_tools_map.html} alt="dev-tool" />
-                    <img src={Assets.dev_tools_map.css} alt="dev-tool" />
+                    {!projects ? null :
+                        tools_names.map((tool) =>
+                            <img src={Assets.dev_tools_map[tool]} alt={tool} />
+                        )
+                    }
                 </div>
             </div>
         </div>

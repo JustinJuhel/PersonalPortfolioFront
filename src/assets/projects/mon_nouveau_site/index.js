@@ -1,0 +1,1 @@
+export { default as logo } from './mon_nouveau_site_logo.png';

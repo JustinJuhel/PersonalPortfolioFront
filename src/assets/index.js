@@ -4,6 +4,7 @@ import * as CommunicationTools from './dev_tools/communication';
 import * as DesignTools from './dev_tools/design';
 import * as Languages from './dev_tools/languages';
 import * as CSLeague from './projects/cs_league';
+import * as MonNouveauSite from './projects/mon_nouveau_site';
 
 // creating the maps to get an easy access to the data
 const dev_tools_map = {
@@ -21,7 +22,10 @@ const dev_tools_map = {
     typescript: Languages.typescript,
     react: Languages.react
 }
-const project_logos_map = { cs_league: CSLeague.logo }
+const project_logos_map = {
+    cs_league: CSLeague.logo,
+    mon_nouveau_site: MonNouveauSite.logo
+}
 
 // exporting the profile picture
 export { default as photo_profil_justin } from './photo_profil_justin.png';
