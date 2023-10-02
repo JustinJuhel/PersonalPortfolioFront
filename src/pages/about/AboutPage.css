@@ -5,9 +5,7 @@
     width: 100%;
 
     background: var(--color-background-dark);
-
-    /* provisoire */
-    color: green;
+    overflow: hidden;
 
     position: relative;
 }

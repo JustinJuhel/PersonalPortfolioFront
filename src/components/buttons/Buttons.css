@@ -156,3 +156,25 @@
     font-weight: 400;
     line-height: normal;
 }
+
+.button-with-icon {
+    padding: 1rem 2rem;
+
+    gap: 1rem;
+}
+
+.button-with-icon>p {
+
+    color: var(--color-primary);
+    text-align: center;
+
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.button-with-icon>img {
+    height: 3rem;
+}

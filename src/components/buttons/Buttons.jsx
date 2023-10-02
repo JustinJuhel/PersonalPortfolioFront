@@ -1,5 +1,6 @@
 import React from 'react';
 import './Buttons.css';
+import * as Assets from '../../assets'
 
 const NavigationButton = ({ text }) => {
     return (
@@ -59,4 +60,13 @@ const AboutMeButton = ({ text }) => {
     )
 }
 
-export { NavigationButton, LanguageButton, LightModeButton, ContactButton, AboutMeButton }
+const ButtonWithIcon = ({ text, iconSrc }) => {
+    return (
+        <div className='button button-with-icon'>
+            <p>{text}</p>
+            <img src={iconSrc} alt={iconSrc} />
+        </div>
+    )
+}
+
+export { NavigationButton, LanguageButton, LightModeButton, ContactButton, AboutMeButton, ButtonWithIcon }
