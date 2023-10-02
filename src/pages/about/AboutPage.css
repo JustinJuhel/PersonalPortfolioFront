@@ -22,7 +22,7 @@
 }
 
 .about-page__bowl {
-    position: absolute;
+    position: fixed;
     width: 30rem;
     height: 30rem;
     top: -4rem;

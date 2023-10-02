@@ -80,7 +80,7 @@
     75% {
         /* box-shadow: 1.56rem 1.56rem 2.625rem #090c11,
             -1.56rem -1.56rem 2.625rem #131a25; */
-        transform: scale(1.01);
+        transform: scale(1.015);
     }
 }
 
