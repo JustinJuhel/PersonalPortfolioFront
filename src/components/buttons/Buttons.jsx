@@ -1,6 +1,7 @@
 import React from 'react';
 import './Buttons.css';
-import * as Assets from '../../assets'
+// import { useNavigate } from 'react-router-dom';
+
 
 const NavigationButton = ({ text }) => {
     return (
@@ -60,9 +61,9 @@ const AboutMeButton = ({ text }) => {
     )
 }
 
-const ButtonWithIcon = ({ text, iconSrc }) => {
+const ButtonWithIcon = ({ text, iconSrc, url }) => {
     return (
-        <div className='button button-with-icon'>
+        <div className='button button-with-icon' onClick={()=>{window.open(url)}}>
             <p>{text}</p>
             <img src={iconSrc} alt={iconSrc} />
         </div>
