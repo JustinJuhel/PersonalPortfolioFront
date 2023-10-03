@@ -6,15 +6,15 @@ import * as Components from '../'
 
 
 
-const Project = ({ id }) => {
-    const [projects, setProjects] = useState(undefined);
-    useEffect(() => {
-        axios.get("http://localhost:8000/projects/get").then(data => data.data).then(data => { setProjects(data.data); })
-    }, []);
+const Project = ({ project, id }) => {
 
     const [modal, setModal] = useState(false);
     const toggleModal = () => {
         setModal(!modal);
+    };
+
+    const closeModal = () => {
+        setModal(false);
     };
 
     const scrollToTop = () => {
@@ -23,12 +23,6 @@ const Project = ({ id }) => {
             behavior: 'smooth', // Pour un défilement fluide
         })
     };
-
-    if (!projects) {
-        return (<div><p>This project is invalid</p></div>)
-    }
-
-    let project = projects[id];
 
     const tools_names = project.tools.split(",");
 
@@ -49,33 +43,36 @@ const Project = ({ id }) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        // position: 'relative',
         flexDirection: id % 2 === 1 ? 'row-reverse' : 'row',
-        // zIndex: 2,
         gap: '2rem',
         padding: '0rem 4rem',
         width: '100%',
         transition: 'all 0.1s ease-in-out',
     };
 
-    // console.log(modal)
+    console.log("project.jsx modal : " + modal);
+
     return (
         <div className='project' style={project_style}>
             <button className='project-logo-button' onClick={() => {
                 toggleModal();
                 scrollToTop();
             }}>
-                <img src={!projects ? null : Assets.project_logos_map[project.logo]} alt="project-logo" />
-                <h1 style={project_name_style}>{!projects ? null : project.name}</h1>
+                {
+                    !project ? <div className="loading-logo"><img src={Assets.loading_logo} alt="loading..." /></div> :
+                        <img src={Assets.project_logos_map[project.logo]} alt="project-logo" />
+                }
+                {/* <div className="loading-logo"><img src={Assets.loading_logo} alt="loading..." /></div> */}
+                <h1 style={project_name_style}>{!project ? null : project.name}</h1>
             </button>
 
             <div className='project-infos'>
                 <div className='project-infos__desc'>
-                    <h1>{!projects ? null : project.title}</h1>
-                    <p>{!projects ? null : project.description}</p>
+                    <h1>{!project ? null : project.title}</h1>
+                    <p>{!project ? null : project.description}</p>
                 </div>
                 <div className='project-infos__tools'>
-                    {!projects ? null :
+                    {!project ? <div className="loading-logo"><img src={Assets.loading_logo} alt="loading..." /></div> :
                         tools_names.map((tool) =>
                             <img src={Assets.dev_tools_map[tool]} alt={tool} />
                         )
@@ -83,31 +80,21 @@ const Project = ({ id }) => {
                 </div>
             </div>
 
-            {!modal ? null :
-                <div className='modal'>
-                    <div className='overlay' onClick={() => {
-                        toggleModal();
-                        // scrollToTop();
-                    }}></div>
-                    <Components.ProjectModal id={id} />
-                </div>
+            {
+                !modal ? null :
+                    <Components.Modal modalBoolean={modal} closeModal={closeModal}>
+                        <Components.ProjectModal project={project} />
+                    </Components.Modal>
             }
         </div>
     )
 }
 
-const ProjectModal = ({ id }) => {
-    const [projects, setProjects] = useState(undefined);
+const ProjectModal = ({ project }) => {
 
-    useEffect(() => {
-        axios.get("http://localhost:8000/projects/get").then(data => data.data).then(data => { setProjects(data.data); })
-    }, []);
-
-    if (!projects) {
+    if (!project) {
         return (<div><p>This project is invalid</p></div>)
     }
-
-    const project = projects[id];
 
     const further_desc = project.further_desc.split(";");
 

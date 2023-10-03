@@ -26,3 +26,28 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
+
+.loading-logo {
+    display: flex;
+    /* height: 100%; */
+    animation: loading-logo infinite 4s linear;
+}
+
+.loading-logo>img {
+    height: 4rem;
+    width: 4rem;
+}
+
+@keyframes loading-logo {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.2) rotate(180deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}

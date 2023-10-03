@@ -34,5 +34,6 @@ const project_pictures_map = {
 
 // exporting the profile picture
 export { default as photo_profil_justin } from './photo_profil_justin.png';
+export { loading_logo } from './loading';
 // exporting the dev tools maps
 export { dev_tools_map, project_logos_map, project_pictures_map }

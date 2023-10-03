@@ -1,0 +1,1 @@
+export { default as loading_logo } from './loading_logo.png';
