@@ -5,6 +5,13 @@ import * as Assets from '../../assets';
 import axios from 'axios';
 
 const WorkPage = () => {
+    
+    // défilement en haut de la page
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth', // Pour un défilement fluide
+    })
+
     const [projects, setProjects] = useState(undefined);
     useEffect(() => {
         axios.get("http://localhost:8000/projects/get").then(data => data.data).then(data => { setProjects(data.data); })

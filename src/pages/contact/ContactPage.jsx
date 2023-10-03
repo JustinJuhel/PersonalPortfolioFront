@@ -1,8 +1,15 @@
 import React from 'react';
 import './ContactPage.css';
 import * as Components from '../../components';
+import { Parallax } from 'react-scroll-parallax';
 
 const ContactPage = () => {
+
+    // défilement en haut de la page
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth', // Pour un défilement fluide
+    })
 
     function copy() {
         const textToCopy = 'justinjuhel@gmail.com';
@@ -24,7 +31,9 @@ const ContactPage = () => {
                 <h1>Contact</h1>
             </div>
             <div className='contact-page__header'>
-                <p>Don’t hesitate to contact me of you have a question or want me to work for you !</p>
+                <Parallax translateY={['0px', '200px']}>
+                    <p>Don’t hesitate to contact me of you have a question or want me to work for you !</p>
+                </Parallax>
             </div>
             <div className='contact-page__options'>
                 <div className='contact-page__bowl'><Components.Bowl /></div>

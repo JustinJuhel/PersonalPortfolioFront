@@ -61,7 +61,7 @@
     /* border: 1px solid white; */
 }
 
-.contact-page__header>p {
+.contact-page__header p {
     color: var(--color-primary);
     font-family: var(--font-heading);
     font-size: 2rem;
