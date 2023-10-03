@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './WorkPage.css';
 import * as Components from '../../components';
+import * as Assets from '../../assets';
 import axios from 'axios';
 
 const WorkPage = () => {
@@ -17,13 +18,11 @@ const WorkPage = () => {
             <div className='work-page__title'><h1>Work</h1></div>
             <div className='work-page__projects-container'>
                 {
-                    !projects?<p>Connexion problem</p>:
-                    projects.map((project, index) => 
-                        <Components.Project project={project} id={index} />
-                    )
+                    !projects ? <Components.LoadingLogo /> :
+                        projects.map((project, index) =>
+                            <Components.Project project={project} id={index} />
+                        )
                 }
-                {/* <Components.Project id={0} />
-                <Components.Project id={1} /> */}
             </div>
 
         </div>

@@ -56,7 +56,7 @@ const AboutPage = () => {
                 </div>
                 <div className='about-page__tools about-page__infos-displayer'>
                     <h1>The tools I develop with :</h1>
-                    {!devTools ? null :
+                    {!devTools ? <Components.LoadingLogo /> :
                         Array.from(partition(devTools, (item) => item.type)).map(([type, tools]) =>
                             <div className='tools-section'>
                                 <p>{title_map[type]}</p>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Project.css';
 import * as Assets from '../../assets';
-import axios from 'axios';
 import * as Components from '../'
 
 
@@ -50,8 +49,6 @@ const Project = ({ project, id }) => {
         transition: 'all 0.1s ease-in-out',
     };
 
-    console.log("project.jsx modal : " + modal);
-
     return (
         <div className='project' style={project_style}>
             <button className='project-logo-button' onClick={() => {
@@ -59,20 +56,20 @@ const Project = ({ project, id }) => {
                 scrollToTop();
             }}>
                 {
-                    !project ? <div className="loading-logo"><img src={Assets.loading_logo} alt="loading..." /></div> :
+                    !project ? <Components.LoadingLogo /> :
                         <img src={Assets.project_logos_map[project.logo]} alt="project-logo" />
                 }
                 {/* <div className="loading-logo"><img src={Assets.loading_logo} alt="loading..." /></div> */}
-                <h1 style={project_name_style}>{!project ? null : project.name}</h1>
+                <h1 style={project_name_style}>{!project ? <Components.LoadingLogo /> : project.name}</h1>
             </button>
 
             <div className='project-infos'>
                 <div className='project-infos__desc'>
-                    <h1>{!project ? null : project.title}</h1>
-                    <p>{!project ? null : project.description}</p>
+                    <h1>{!project ? <Components.LoadingLogo /> : project.title}</h1>
+                    <p>{!project ? <Components.LoadingLogo /> : project.description}</p>
                 </div>
                 <div className='project-infos__tools'>
-                    {!project ? <div className="loading-logo"><img src={Assets.loading_logo} alt="loading..." /></div> :
+                    {!project ? <Components.LoadingLogo /> :
                         tools_names.map((tool) =>
                             <img src={Assets.dev_tools_map[tool]} alt={tool} />
                         )
@@ -81,7 +78,7 @@ const Project = ({ project, id }) => {
             </div>
 
             {
-                !modal ? null :
+                !modal ? <Components.LoadingLogo /> :
                     <Components.Modal modalBoolean={modal} closeModal={closeModal}>
                         <Components.ProjectModal project={project} />
                     </Components.Modal>
