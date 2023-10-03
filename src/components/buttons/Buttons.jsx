@@ -5,7 +5,7 @@ import './Buttons.css';
 
 const NavigationButton = ({ text }) => {
     return (
-        <div className='generic-button button'>
+        <div className='nav-btn button'>
             <p>{text}</p>
         </div>
     )
@@ -53,7 +53,7 @@ const ContactButton = ({ text }) => {
     )
 }
 
-const AboutMeButton = ({ text }) => {
+const Button = ({ text }) => {
     return (
         <div className='about-me-button button'>
             <p>{text}</p>
@@ -61,7 +61,7 @@ const AboutMeButton = ({ text }) => {
     )
 }
 
-const ButtonWithIcon = ({ text, iconSrc, url }) => {
+const ButtonIcon = ({ text, iconSrc, url }) => {
     return (
         <div className='button button-with-icon' onClick={()=>{window.open(url)}}>
             <p>{text}</p>
@@ -70,4 +70,4 @@ const ButtonWithIcon = ({ text, iconSrc, url }) => {
     )
 }
 
-export { NavigationButton, LanguageButton, LightModeButton, ContactButton, AboutMeButton, ButtonWithIcon }
+export { NavigationButton, LanguageButton, LightModeButton, ContactButton, Button, ButtonIcon }

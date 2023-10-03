@@ -73,11 +73,6 @@
     transition: all 0.1s ease-in-out;
 }
 
-.navigation-button:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-}
-
 #navbar:hover .navbar-content {
     transform: translateX(0);
 }

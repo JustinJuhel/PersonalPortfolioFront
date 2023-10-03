@@ -43,6 +43,7 @@ const Project = ({ project, id }) => {
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: id % 2 === 1 ? 'row-reverse' : 'row',
+        // zIndex: 2,
         gap: '2rem',
         padding: '0rem 4rem',
         width: '100%',
@@ -59,7 +60,6 @@ const Project = ({ project, id }) => {
                     !project ? <Components.LoadingLogo /> :
                         <img src={Assets.project_logos_map[project.logo]} alt="project-logo" />
                 }
-                {/* <div className="loading-logo"><img src={Assets.loading_logo} alt="loading..." /></div> */}
                 <h1 style={project_name_style}>{!project ? <Components.LoadingLogo /> : project.name}</h1>
             </button>
 
@@ -124,8 +124,8 @@ const ProjectModal = ({ project }) => {
                     )}
             </div>
             <div className='project-modal__buttons'>
-                <Components.ButtonWithIcon text="Github Repository" iconSrc={Assets.dev_tools_map.github} url={project.github_repo_url} />
-                <Components.ButtonWithIcon text="Visit Website" iconSrc={Assets.project_logos_map[project.logo]} url={project.website_url} />
+                <Components.ButtonIcon text="Github Repository" iconSrc={Assets.dev_tools_map.github} url={project.github_repo_url} />
+                <Components.ButtonIcon text="Visit Website" iconSrc={Assets.project_logos_map[project.logo]} url={project.website_url} />
             </div>
             {pictures.length != pictures_captions.length ? <p>Vous devez fournir autant de commentaires que d'images !</p> :
                 pictures.length === 0 ? null :

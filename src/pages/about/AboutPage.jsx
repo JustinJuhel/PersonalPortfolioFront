@@ -61,8 +61,8 @@ const AboutPage = () => {
                         <p>I’m currently studying at CentraleSupélec, university of Paris-Saclay and preparing a engineering degree in Mathematics & Data Science.</p>
                         <p>In parallel, I’m a FrontEnd developer and associated with a friend from the engineering school.  We are passionated by web dvelopment and working hard to become always better. I’m working on myself to become a FullStack developer.</p>
                         <div className='about-page__contact'>
-                            <div className='about-page__CV-button contact-page__button'><Components.AboutMeButton text={"Dowload my CV"} /></div>
-                            <div className='about-page__contact-button contact-page__button' onClick={() => { navigate('/contact') }}><Components.AboutMeButton text={"Contact me"} /></div>
+                            <a className='about-page__CV-button contact-page__button' href='../../assets/CV_FR.pdf' download><Components.Button text={"Dowload my CV"} /></a>
+                            <div className='about-page__contact-button contact-page__button' onClick={() => { navigate('/contact') }}><Components.Button text={"Contact me"} /></div>
                         </div>
                     </div>
                     <div className='about-page__tools about-page__infos-displayer'>

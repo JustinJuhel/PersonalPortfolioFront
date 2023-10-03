@@ -116,8 +116,9 @@
     gap: 2rem;
 }
 
-.contage-page__button {
+.contact-page__button {
     font-size: 1rem;
+    text-decoration: none;
 }
 
 .tools-section {
