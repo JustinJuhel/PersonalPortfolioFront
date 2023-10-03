@@ -65,7 +65,7 @@ const Project = ({ project, id }) => {
 
             <div className='project-infos'>
                 <div className='project-infos__desc'>
-                    <h1>{!project ? <Components.LoadingLogo /> : project.title}</h1>
+                    <h1>{!project ? null : project.title}</h1>
                     <p>{!project ? <Components.LoadingLogo /> : project.description}</p>
                 </div>
                 <div className='project-infos__tools'>
@@ -78,7 +78,7 @@ const Project = ({ project, id }) => {
             </div>
 
             {
-                !modal ? <Components.LoadingLogo /> :
+                !modal ? null :
                     <Components.Modal modalBoolean={modal} closeModal={closeModal}>
                         <Components.ProjectModal project={project} />
                     </Components.Modal>
@@ -115,11 +115,11 @@ const ProjectModal = ({ project }) => {
     return (
         <div className='project-modal__content'>
             <div className='project-modal__title'>
-                <img src={!project.logo ? null : Assets.project_logos_map[project.logo]} alt={project.logo} />
+                <img src={!project.logo ? <Components.LoadingLogo /> : Assets.project_logos_map[project.logo]} alt={project.logo} />
                 <h1 style={project_name_style}>{project.name}</h1>
             </div>
             <div className='project-modal__description'>
-                {!further_desc ? null :
+                {!further_desc ? <Components.LoadingLogo /> :
                     further_desc.map((paragraph) => <p>{paragraph}</p>
                     )}
             </div>
