@@ -3,9 +3,10 @@ import './WorkPage.css';
 import * as Components from '../../components';
 import * as Assets from '../../assets';
 import axios from 'axios';
+import { Parallax } from 'react-scroll-parallax';
 
-const WorkPage = () => {
-    
+const WorkPage = ({ theme }) => {
+
     // défilement en haut de la page
     window.scrollTo({
         top: 0,
@@ -17,17 +18,21 @@ const WorkPage = () => {
         axios.get("http://localhost:8000/projects/get").then(data => data.data).then(data => { setProjects(data.data); })
     }, []);
     return (
-        <div id='work-page'>
+        <div className={'work-page work-page-' + theme}>
 
-            <div className='work-page__background-gradients'></div>
+            <div className={'work-page__background-gradients work-page__background-gradients-' + theme}></div>
 
-            <div className='work-page__bowl'><Components.Bowl /></div>
-            <div className='work-page__title'><h1>Work</h1></div>
+            <div className='work-page__bowl'>
+                <Parallax translateX={['-100px', '50px']}>
+                    <Components.Bowl theme={theme} />
+                </Parallax>
+            </div>
+            <div className={'work-page__title work-page__title-' + theme}><h1>Work</h1></div>
             <div className='work-page__projects-container'>
                 {
                     !projects ? <Components.LoadingLogo /> :
                         projects.map((project, index) =>
-                            <Components.Project project={project} id={index} />
+                            <Components.Project project={project} id={index} theme={theme} />
                         )
                 }
             </div>

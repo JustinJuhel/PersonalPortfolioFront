@@ -1,4 +1,4 @@
-#work-page {
+.work-page {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,15 +13,26 @@
     /* border: 5px solid red; */
 }
 
+.work-page-light {
+    background: var(--color-background-light);
+}
+
 .work-page__background-gradients {
     position: absolute;
     width: 100%;
     height: 100%;
     /* z-index: 1; */
     background:
-        var(--background-first-gradient),
-        var(--background-second-gradient),
-        var(--background-third-gradient);
+        var(--background-first-gradient-dark),
+        var(--background-second-gradient-dark),
+        var(--background-third-gradient-dark);
+}
+
+.work-page__background-gradients-light {
+    background:
+        var(--background-first-gradient-light),
+        var(--background-second-gradient-light),
+        var(--background-third-gradient-light);
 }
 
 .work-page__bowl {
@@ -59,6 +70,10 @@
     margin-right: 12rem;
 
     /* border: 1px solid white; */
+}
+
+.work-page__title-light>h1 {
+    color: var(--color-tertiary);
 }
 
 .work-page__projects-container {

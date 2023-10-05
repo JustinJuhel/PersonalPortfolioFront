@@ -1,7 +1,7 @@
 import React from 'react';
 import './Bowl.css';
 
-const Bowl = () => {
+const Bowl = ({ theme }) => {
 
     // // updating the blur effect intensity for the forms
     // var formBlurIntensity = -1.11 * diameter + 83.33;
@@ -24,7 +24,7 @@ const Bowl = () => {
     // }
 
     return (
-        <div className='bowl-container'>
+        <div className={'bowl-container bowl-container-' + theme}>
             <div className='bowl'>
                 <svg className="white-stroke" width="717" height="717" viewBox="0 0 717 717" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_f_53_698)">

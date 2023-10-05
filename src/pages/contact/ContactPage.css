@@ -1,9 +1,13 @@
-#contact-page {
+.contact-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     background-color: var(--color-background-dark);
+}
+
+.contact-page-light {
+    background-color: var(--color-background-light);
 }
 
 .contact-page__background-gradients {
@@ -12,9 +16,16 @@
     height: 100%;
     z-index: 0;
     background:
-        var(--background-first-gradient),
-        var(--background-second-gradient),
-        var(--background-third-gradient);
+        var(--background-first-gradient-dark),
+        var(--background-second-gradient-dark),
+        var(--background-third-gradient-dark);
+}
+
+.contact-page__background-gradients-light {
+    background:
+        var(--background-first-gradient-light),
+        var(--background-second-gradient-light),
+        var(--background-third-gradient-light);
 }
 
 .contact-page__content {
@@ -49,6 +60,10 @@
     /* border: 1px solid white; */
 }
 
+.contact-page__title-light>h1 {
+    color: var(--color-tertiary);
+}
+
 .contact-page__header {
     display: flex;
     width: 100%;
@@ -70,6 +85,10 @@
     line-height: normal;
     text-align: justify;
     max-width: 45%;
+}
+
+.contact-page__header-light p {
+    color: var(--color-secondary);
 }
 
 .contact-page__options {

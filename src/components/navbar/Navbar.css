@@ -36,7 +36,6 @@
     height: 100%;
     position: absolute;
     left: 0;
-
     background-color: var(--color-secondary);
     transition: all 0.2s ease-in-out;
 }

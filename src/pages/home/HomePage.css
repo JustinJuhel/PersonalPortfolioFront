@@ -1,4 +1,4 @@
-#home-page {
+.home-page {
     display: flex;
     position: relative;
 
@@ -7,14 +7,30 @@
     background: var(--color-background-dark);
 }
 
+.home-page-dark {
+    background: var(--color-background-dark);
+}
+
+.home-page-light {
+    background: var(--color-background-light);
+}
+
 .home-page__background-gradients {
     position: absolute;
     width: 100%;
-    height:100%;
+    height: 100%;
+}
 
-    background: 
-        var(--background-first-gradient),
-        var(--background-second-gradient);
+.home-page__background-gradients-dark {
+    background:
+        var(--background-first-gradient-dark),
+        var(--background-second-gradient-dark);
+}
+
+.home-page__background-gradients-light {
+    background:
+        var(--background-first-gradient-light),
+        var(--background-second-gradient-light);
 }
 
 .home-page__main-bowl {
@@ -30,13 +46,20 @@
 .my-name {
     position: absolute;
 
-    color: var(--white-100);
     font-family: var(--font-heading);
     font-size: 18rem;
     font-style: normal;
     line-height: normal;
 
     z-index: 1;
+}
+
+.my-name-dark {
+    color: var(--white-100);
+}
+
+.my-name-light {
+    color: var(--black-75);
 }
 
 .justin {
@@ -73,28 +96,46 @@
     width: 100%;
     height: 0.2rem;
     /* background: rgba(195, 211, 238, 0.50); */
+    
+}
+
+.home-page__bottom-line-dark {
     background: var(--color-primary);
     opacity: 0.5;
 }
 
+.home-page__bottom-line-light {
+    background: var(--color-secondary);
+}
+
 .my-job {
     width: 15%;
-    color: var(--color-primary);
-    opacity: 0.5;
+    
     font-family: var(--font-heading);
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+.my-job-dark {
+    color: var(--color-primary);
+    opacity: 0.5;
+}
+
+.my-job-light {
+    color: var(--color-secondary);
 }
 
 @media screen and (max-width:2000px) {
     .home-page__main-bowl {
         width: 35%;
     }
+
     .my-name {
         font-size: 16rem;
     }
+
     .justin {
         top: 10%;
         left: 10%;

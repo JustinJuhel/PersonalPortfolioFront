@@ -5,7 +5,7 @@ import * as Components from '../'
 
 
 
-const Project = ({ project, id }) => {
+const Project = ({ project, id, theme }) => {
 
     const [modal, setModal] = useState(false);
     const toggleModal = () => {
@@ -52,7 +52,7 @@ const Project = ({ project, id }) => {
 
     return (
         <div className='project' style={project_style}>
-            <button className='project-logo-button' onClick={() => {
+            <button className={'project-logo-button project-logo-button-' + theme} onClick={() => {
                 toggleModal();
                 scrollToTop();
             }}>
@@ -64,7 +64,7 @@ const Project = ({ project, id }) => {
             </button>
 
             <div className='project-infos'>
-                <div className='project-infos__desc'>
+                <div className={'project-infos__desc project-infos__desc-' + theme}>
                     <h1>{!project ? null : project.title}</h1>
                     <p>{!project ? <Components.LoadingLogo /> : project.description}</p>
                 </div>
@@ -80,14 +80,14 @@ const Project = ({ project, id }) => {
             {
                 !modal ? null :
                     <Components.Modal modalBoolean={modal} closeModal={closeModal}>
-                        <Components.ProjectModal project={project} />
+                        <Components.ProjectModal project={project} theme={theme} />
                     </Components.Modal>
             }
         </div>
     )
 }
 
-const ProjectModal = ({ project }) => {
+const ProjectModal = ({ project, theme }) => {
 
     if (!project) {
         return (<div><p>This project is invalid</p></div>)
@@ -113,12 +113,12 @@ const ProjectModal = ({ project }) => {
     };
 
     return (
-        <div className='project-modal__content'>
+        <div className={'project-modal__content project-modal__content-' + theme}>
             <div className='project-modal__title'>
                 <img src={!project.logo ? <Components.LoadingLogo /> : Assets.project_logos_map[project.logo]} alt={project.logo} />
                 <h1 style={project_name_style}>{project.name}</h1>
             </div>
-            <div className='project-modal__description'>
+            <div className={'project-modal__description project-modal__description-' + theme}>
                 {!further_desc ? <Components.LoadingLogo /> :
                     further_desc.map((paragraph) => <p>{paragraph}</p>
                     )}
@@ -130,7 +130,7 @@ const ProjectModal = ({ project }) => {
             {pictures.length != pictures_captions.length ? <p>Vous devez fournir autant de commentaires que d'images !</p> :
                 pictures.length === 0 ? null :
                     indexList.map((index) =>
-                        <div className="project-modal__single-image" style={{
+                        <div className={"project-modal__single-image project-modal__single-image-" + theme} style={{
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: index % 2 === 0 ? 'end' : 'baseline',

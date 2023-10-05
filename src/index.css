@@ -2,9 +2,13 @@
     --color-background-dark: #0E131B;
     --color-background-light: #DFE6F1;
 
-    --background-first-gradient: radial-gradient(25rem 25rem at -5% 10%, rgb(20, 26, 34) 50%, rgba(14, 19, 27, 0) 100%);
-    --background-second-gradient: radial-gradient(25rem 25rem at 110% 45%, rgb(20, 26, 34) 50%, rgba(14, 19, 27, 0) 100%);
-    --background-third-gradient: radial-gradient(25rem 25rem at 0% 90%, rgb(20, 26, 34) 50%, rgba(14, 19, 27, 0) 100%);
+    --background-first-gradient-dark: radial-gradient(25rem 25rem at -5% 10%, rgb(20, 26, 34) 50%, rgba(14, 19, 27, 0) 100%);
+    --background-second-gradient-dark: radial-gradient(25rem 25rem at 110% 45%, rgb(20, 26, 34) 50%, rgba(14, 19, 27, 0) 100%);
+    --background-third-gradient-dark: radial-gradient(25rem 25rem at 0% 90%, rgb(20, 26, 34) 50%, rgba(14, 19, 27, 0) 100%);
+
+    --background-first-gradient-light: radial-gradient(25rem 25rem at -5% 10%, rgb(182, 203, 234) 50%, rgba(93, 139, 214, 0) 100%);
+    --background-second-gradient-light: radial-gradient(25rem 25rem at 110% 45%, rgb(182, 203, 234) 50%, rgba(100, 144, 215, 0) 100%);
+    --background-third-gradient-light: radial-gradient(25rem 25rem at 0% 90%, rgb(182, 203, 234) 50%, rgba(100, 144, 215, 0) 100%);
 
 
     --color-primary: #C3D3EE;

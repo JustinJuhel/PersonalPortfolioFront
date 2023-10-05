@@ -3,11 +3,16 @@
     height: 100%;
     border-radius: 50%;
 
-    box-shadow: 2rem 2rem 4rem #06080b,
-        -2rem -2rem 4rem #161e2b;
-
     animation: bowl-animation infinite 4s ease-in-out;
+}
 
+.bowl-container-dark {
+    box-shadow: 2rem 2rem 4rem #06080b,
+    -2rem -2rem 4rem #161e2b;
+}
+.bowl-container-light {
+    box-shadow: 2rem 2rem 4rem #b3c4ce,
+    -2rem -2rem 4rem #b3c4ce;
 }
 
 .bowl {

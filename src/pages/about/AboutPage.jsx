@@ -20,7 +20,7 @@ function partition(data, func) {
     return map
 }
 
-const AboutPage = () => {
+const AboutPage = ({ theme }) => {
 
     // défilement en haut de la page
     window.scrollTo({
@@ -47,29 +47,29 @@ const AboutPage = () => {
     let navigate = useNavigate();
     return (
 
-        <div className='about-page'>
+        <div className={'about-page about-page-' + theme}>
 
-            <div className='about-page__background-gradients'></div>
+            <div className={'about-page__background-gradients about-page__background-gradients-'+theme}></div>
 
-            <div className='about-page__bowl'><Components.Bowl /></div>
-            <div className='about-page__title'>About</div>
+            <div className='about-page__bowl'><Components.Bowl theme={theme} /></div>
+            <div className={'about-page__title about-page__title-'+theme}>About</div>
             <div className='about-page__profile-picture'><img src={Assets.photo_profil_justin} alt="profile-picture" /></div>
             <Parallax translateY={['0px', '-150px']}>
                 <div className='about-page__infos'>
-                    <div className='about-page__me about-page__infos-displayer'>
+                    <div className={'about-page__infos-displayer about-page__infos-displayer-'+theme}>
                         <h1>I’m Justin Juhel, a engineer student and FrontEnd Developer.</h1>
                         <p>I’m currently studying at CentraleSupélec, university of Paris-Saclay and preparing a engineering degree in Mathematics & Data Science.</p>
                         <p>In parallel, I’m a FrontEnd developer and associated with a friend from the engineering school.  We are passionated by web dvelopment and working hard to become always better. I’m working on myself to become a FullStack developer.</p>
                         <div className='about-page__contact'>
-                            <a className='about-page__CV-button contact-page__button' href='../../assets/CV_FR.pdf' download><Components.Button text={"Dowload my CV"} /></a>
-                            <div className='about-page__contact-button contact-page__button' onClick={() => { navigate('/contact') }}><Components.Button text={"Contact me"} /></div>
+                            <a className='contact-page__button' href='../../assets/CV_FR.pdf' download><Components.Button text={"Dowload my CV"} theme={theme} /></a>
+                            <div className='contact-page__button' onClick={() => { navigate('/contact') }}><Components.Button text={"Contact me"} theme={theme} /></div>
                         </div>
                     </div>
-                    <div className='about-page__tools about-page__infos-displayer'>
+                    <div className={'about-page__tools about-page__infos-displayer about-page__infos-displayer-'+theme}>
                         <h1>The tools I develop with :</h1>
                         {!devTools ? <Components.LoadingLogo /> :
                             Array.from(partition(devTools, (item) => item.type)).map(([type, tools]) =>
-                                <div className='tools-section'>
+                                <div className={'tools-section tools-section-'+theme}>
                                     <p>{title_map[type]}</p>
                                     <div className='dev-tools__displayer'>
                                         {tools.map((tool) =>

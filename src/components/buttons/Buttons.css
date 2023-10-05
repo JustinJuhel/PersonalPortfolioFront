@@ -3,10 +3,17 @@
     align-items: center;
     justify-content: center;
     border-radius: 2rem;
-    background: var(--black-10);
-    backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(1.5rem);
 
     transition: all 0.1s ease-in-out;
+}
+
+.button-dark {
+    background: var(--black-10);
+}
+
+.button-light {
+    background: var(--black-25);
 }
 
 .button:hover {
@@ -31,6 +38,10 @@
     transform: rotate(-90deg);
 }
 
+.nav-btn-light>p {
+    color: var(--color-primary);
+}
+
 .nav-btn:hover {
     background: var(--white-50);
 }
@@ -42,7 +53,6 @@
 .language-button {
     padding: 0.75rem 1rem;
 
-    color: var(--color-tertiary);
     text-align: right;
     font-family: var(--font-paragraph);
     font-size: 1.25rem;
@@ -51,6 +61,14 @@
     line-height: normal;
 
     transition: all 0.1s ease-in-out;
+}
+
+.language-button-dark {
+    color: var(--color-tertiary);
+}
+
+.language-button-light {
+    color: var(--color-primary);
 }
 
 .light-mode-button {
@@ -165,6 +183,15 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.about-me-button-light {
+    background:var(--white-10);
+    color: var(--white-100);
+}
+
+.about-me-button-light:hover {
+    background: var(--white-25);
 }
 
 .button-with-icon {
