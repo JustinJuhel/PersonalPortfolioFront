@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import * as Components from './components';
 import * as Pages from './pages';
 import { ParallaxProvider } from 'react-scroll-parallax';
@@ -23,22 +23,32 @@ const App = () => {
         } else {
             setLanguage('en');
         }
-        console.log(language)
+        console.log("new language : "+language)
     }
 
     return (
-            <ParallaxProvider>
-                <BrowserRouter>
-                    <Components.Navbar theme={theme} toggleTheme={toggleTheme} language={language} toggleLanguage={toggleLanguage} />
-                    <Routes>
-                        <Route path="/" element={<Pages.HomePage theme={theme} language={language} />} />
-                        <Route path="/work" element={<Pages.WorkPage theme={theme} language={language} />} />
-                        <Route path="/about" element={<Pages.AboutPage theme={theme} language={language} />} />
-                        <Route path="/contact" element={<Pages.ContactPage theme={theme} language={language} />} />
-                    </Routes>
-                </BrowserRouter>
-            </ParallaxProvider>
+        <ParallaxProvider>
+            <BrowserRouter>
+                <Components.Navbar theme={theme} toggleTheme={toggleTheme} language={language} toggleLanguage={toggleLanguage} />
+                <Routes>
+                    <Route path="/" element={<Pages.HomePage theme={theme} />} />
+                    <Route path="/:lang/work" element={<Pages.WorkPage theme={theme} />} />
+                    <Route path="/:lang/about" element={<Pages.AboutPage theme={theme} language={language} />} />
+                    <Route path="/:lang/contact" element={<Pages.ContactPage theme={theme} language={language} />} />
+                    <Route path="/:lang/test" element={<Test />} />
+                    <Route path="/:lang" element={<Pages.HomePage theme={theme} />} />
+                </Routes>
+            </BrowserRouter>
+        </ParallaxProvider>
     )
+}
+
+const Test = () => {
+
+    const params = useParams();
+    return (<div>
+        <p>{params.lang}</p>
+    </div>)
 }
 
 export default App

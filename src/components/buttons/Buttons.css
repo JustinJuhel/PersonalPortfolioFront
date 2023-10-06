@@ -216,3 +216,11 @@
 .button-with-icon>img {
     height: 3rem;
 }
+
+.moon {
+    transition: clip-path 0.3s ease-in-out
+}
+
+.moon:hover {
+    clip-path: circle(50% center);
+}

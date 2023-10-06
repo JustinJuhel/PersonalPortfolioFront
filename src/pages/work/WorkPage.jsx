@@ -4,16 +4,16 @@ import * as Components from '../../components';
 import * as Assets from '../../assets';
 import axios from 'axios';
 import { Parallax } from 'react-scroll-parallax';
+import { useParams } from 'react-router-dom';
 
-const WorkPage = ({ theme, language }) => {
-
+const WorkPage = ({ theme }) => {
+    const params = useParams()
+    const language = params.lang ?? "fr";
     // défilement en haut de la page
     window.scrollTo({
         top: 0,
         behavior: 'smooth', // Pour un défilement fluide
     })
-
-    console.log("http://localhost:8000/projects/get-" + language)
 
     const [projects, setProjects] = useState(undefined);
     useEffect(() => {

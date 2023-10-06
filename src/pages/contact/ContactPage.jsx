@@ -2,8 +2,11 @@ import React from 'react';
 import './ContactPage.css';
 import * as Components from '../../components';
 import { Parallax } from 'react-scroll-parallax';
+import { useParams } from 'react-router-dom';
 
-const ContactPage = ({ theme, language }) => {
+const ContactPage = ({ theme }) => {
+    const params = useParams()
+    const language = params.lang ?? "fr";
 
     // défilement en haut de la page
     window.scrollTo({

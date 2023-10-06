@@ -2,8 +2,12 @@ import React from 'react';
 import './HomePage.css';
 import * as Components from '../../components';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
-const HomePage = ({ theme, language }) => {
+const HomePage = ({ theme }) => {
+
+    const params = useParams();
+    const language = params.lang ?? "fr";
 
     return (
         <div className={'home-page home-page-' + theme}>

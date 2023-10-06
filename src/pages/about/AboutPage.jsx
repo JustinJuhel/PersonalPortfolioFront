@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "./AboutPage.css";
 import * as Components from '../../components';
 import * as Assets from '../../assets';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Parallax } from 'react-scroll-parallax';
 
@@ -20,7 +20,9 @@ function partition(data, func) {
     return map
 }
 
-const AboutPage = ({ theme, language }) => {
+const AboutPage = ({ theme }) => {
+    const params = useParams()
+    const language = params.lang ?? "fr";
 
     // défilement en haut de la page
     window.scrollTo({
