@@ -4,8 +4,6 @@ import * as Components from '../';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const Navbar = ({ theme, language, toggleTheme, toggleLanguage }) => {
-    // const params = useParams()
-    // const language = params.lang ?? 'fr';
     let newLanguage = null;
     if (language === 'en') {
         newLanguage = 'fr';
@@ -13,7 +11,6 @@ const Navbar = ({ theme, language, toggleTheme, toggleLanguage }) => {
         newLanguage = 'en';
     };
     let navigate = useNavigate();
-    // console.log(params.lang)
     console.log(language)
     return (
         <div id='navbar'>

@@ -23,7 +23,6 @@ const App = () => {
         } else {
             setLanguage('en');
         }
-        console.log("new language : "+language)
     }
 
     return (
