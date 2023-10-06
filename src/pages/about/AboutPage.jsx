@@ -39,7 +39,7 @@ const AboutPage = ({ theme }) => {
     // }
     const [aboutMeMap, setAboutMeMap] = useState(undefined);
     useEffect(() => {
-        axios.get(`http://localhost:8000/${language}/about`).then(data => data.data).then(data => setAboutMeMap(data.data))
+        axios.get(`http://localhost:8000/about/get?lang=${language}`).then(data => data.data).then(data => setAboutMeMap(data.data))
     }, [])
     // if (aboutMeMap) {
     //     console.log(aboutMeMap[0].description.split(";"))

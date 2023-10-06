@@ -5,16 +5,23 @@ import * as Components from './components';
 import * as Pages from './pages';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
+// on récupère l'état du thème dans le stockage local
+const initialState = !!JSON.parse(localStorage.getItem('theme'))
+
 const App = () => {
-    const [theme, setTheme] = useState('light');
+    const [isDark, setisDark] = useState(initialState);
     // function that changes the state of the theme to 'dark' or 'light'
     const toggleTheme = () => {
-        if (theme === 'light') {
-            setTheme('dark');
+        if (isDark) {
+            setisDark(false);
         } else {
-            setTheme('light');
+            setisDark(true);
         }
     };
+    // on met à jour la valeur du thème dans le stockage local
+    useEffect(() => {
+        localStorage.setItem('theme', isDark)
+    }, [isDark])
 
     const [language, setLanguage] = useState('en');
     const toggleLanguage = () => {
@@ -23,6 +30,13 @@ const App = () => {
         } else {
             setLanguage('en');
         }
+    }
+
+    let theme=null;
+    if (isDark) {
+        theme = 'dark';
+    } else {
+        theme = 'light'
     }
 
     return (

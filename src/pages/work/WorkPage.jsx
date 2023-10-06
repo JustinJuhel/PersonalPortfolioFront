@@ -17,7 +17,7 @@ const WorkPage = ({ theme }) => {
 
     const [projects, setProjects] = useState(undefined);
     useEffect(() => {
-        axios.get(`http://localhost:8000/${language}/projects`).then(data => data.data).then(data => { setProjects(data.data); })
+        axios.get(`http://localhost:8000/projects/get?lang=${language}`).then(data => data.data).then(data => { setProjects(data.data); })
     }, []);
     return (
         <div className={'work-page work-page-' + theme}>

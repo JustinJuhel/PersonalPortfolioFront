@@ -4,7 +4,9 @@
 
     height: 100vh;
 
-    background: var(--color-background-dark);
+    /* background: var(--color-background-dark); */
+    transition: background 2s;
+
 }
 
 .home-page-dark {
@@ -19,6 +21,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    transition: background 2s;
 }
 
 .home-page__background-gradients-dark {
