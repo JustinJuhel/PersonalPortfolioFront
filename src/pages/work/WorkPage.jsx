@@ -5,7 +5,7 @@ import * as Assets from '../../assets';
 import axios from 'axios';
 import { Parallax } from 'react-scroll-parallax';
 
-const WorkPage = ({ theme }) => {
+const WorkPage = ({ theme, language }) => {
 
     // défilement en haut de la page
     window.scrollTo({
@@ -13,9 +13,11 @@ const WorkPage = ({ theme }) => {
         behavior: 'smooth', // Pour un défilement fluide
     })
 
+    console.log("http://localhost:8000/projects/get-" + language)
+
     const [projects, setProjects] = useState(undefined);
     useEffect(() => {
-        axios.get("http://localhost:8000/projects/get").then(data => data.data).then(data => { setProjects(data.data); })
+        axios.get("http://localhost:8000/projects/get-" + language).then(data => data.data).then(data => { setProjects(data.data); })
     }, []);
     return (
         <div className={'work-page work-page-' + theme}>
@@ -27,7 +29,7 @@ const WorkPage = ({ theme }) => {
                     <Components.Bowl theme={theme} />
                 </Parallax>
             </div>
-            <div className={'work-page__title work-page__title-' + theme}><h1>Work</h1></div>
+            <div className={'work-page__title work-page__title-' + theme}><h1>{language === 'en' ? 'Work' : 'Travail'}</h1></div>
             <div className='work-page__projects-container'>
                 {
                     !projects ? <Components.LoadingLogo /> :

@@ -11,10 +11,13 @@ const NavigationButton = ({ text, theme }) => {
     )
 }
 
-const LanguageButton = ({ theme }) => {
+const LanguageButton = ({ theme, language }) => {
     return (
         <div className={'language-button button language-button-' + theme + ' button-' + theme}>
-            <p>FR</p>
+            {
+                language==='en'?<p>FR</p>:<p>EN</p>
+            }
+            
         </div>
     )
 }

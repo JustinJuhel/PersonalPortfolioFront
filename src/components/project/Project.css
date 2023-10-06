@@ -163,7 +163,7 @@
 }
 
 .project-modal__description-light>p {
-    color: var(--color-secondary);
+    color: var(--white-100);
 }
 
 .project-modal__buttons {
@@ -189,5 +189,5 @@
 }
 
 .project-modal__single-image-light>p {
-    color: var(--color-secondary);
+    color: var(--white-100);
 }

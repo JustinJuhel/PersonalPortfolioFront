@@ -20,7 +20,7 @@ function partition(data, func) {
     return map
 }
 
-const AboutPage = ({ theme }) => {
+const AboutPage = ({ theme, language }) => {
 
     // défilement en haut de la page
     window.scrollTo({
@@ -32,16 +32,35 @@ const AboutPage = ({ theme }) => {
     useEffect(() => {
         axios.get("http://localhost:8000/devtools/get_tools").then(data => data.data).then(data => { setDevTools(data.data.filter((item) => item.used === "used")); })
     }, [])
-    if (devTools) {
-        console.log(partition(devTools, (item) => item.type))
-
+    // if (devTools) {
+    //     console.log(partition(devTools, (item) => item.type))
+    // }
+    const [aboutMeMap, setAboutMeMap] = useState(undefined);
+    useEffect(() => {
+        axios.get("http://localhost:8000/about_me/get-" + language).then(data => data.data).then(data => setAboutMeMap(data.data))
+    }, [])
+    // if (aboutMeMap) {
+    //     console.log(aboutMeMap[0].description.split(";"))
+    // }
+    let about_me_map = []
+    if (aboutMeMap) {
+        about_me_map = aboutMeMap[0].description.split(";");
     }
 
-    const title_map = {
+    // console.log(about_me_map)
+
+    const title_map_en = {
         "code_editor": "Code Editors",
         "communication_tool": "Communication",
         "design_tool": "Design",
         "language": "Languages"
+    }
+
+    const title_map_fr = {
+        "code_editor": "Editeurs de code",
+        "communication_tool": "Communication",
+        "design_tool": "Design",
+        "language": "Langages"
     }
 
     let navigate = useNavigate();
@@ -49,28 +68,31 @@ const AboutPage = ({ theme }) => {
 
         <div className={'about-page about-page-' + theme}>
 
-            <div className={'about-page__background-gradients about-page__background-gradients-'+theme}></div>
+            <div className={'about-page__background-gradients about-page__background-gradients-' + theme}></div>
 
             <div className='about-page__bowl'><Components.Bowl theme={theme} /></div>
-            <div className={'about-page__title about-page__title-'+theme}>About</div>
+            <div className={'about-page__title about-page__title-' + theme}>{language === 'en' ? 'About' : 'A Propos'}</div>
             <div className='about-page__profile-picture'><img src={Assets.photo_profil_justin} alt="profile-picture" /></div>
             <Parallax translateY={['0px', '-150px']}>
                 <div className='about-page__infos'>
-                    <div className={'about-page__infos-displayer about-page__infos-displayer-'+theme}>
-                        <h1>I’m Justin Juhel, a engineer student and FrontEnd Developer.</h1>
-                        <p>I’m currently studying at CentraleSupélec, university of Paris-Saclay and preparing a engineering degree in Mathematics & Data Science.</p>
-                        <p>In parallel, I’m a FrontEnd developer and associated with a friend from the engineering school.  We are passionated by web dvelopment and working hard to become always better. I’m working on myself to become a FullStack developer.</p>
+                    <div className={'about-page__infos-displayer about-page__infos-displayer-' + theme}>
+                        <h1>{!about_me_map ? <Components.LoadingLogo /> : about_me_map[0]}</h1>
+                        {!about_me_map ? <Components.LoadingLogo /> :
+                            about_me_map.slice(1).map((paragraph) =>
+                                <p>{paragraph}</p>
+                            )
+                        }
                         <div className='about-page__contact'>
-                            <a className='contact-page__button' href='../../assets/CV_FR.pdf' download><Components.Button text={"Dowload my CV"} theme={theme} /></a>
-                            <div className='contact-page__button' onClick={() => { navigate('/contact') }}><Components.Button text={"Contact me"} theme={theme} /></div>
+                            <a className='contact-page__button' href='../../assets/CV_FR.pdf' download><Components.Button text={language === 'en' ? "My CV" : "Mon CV"} theme={theme} /></a>
+                            <div className='contact-page__button' onClick={() => { navigate('/contact') }}><Components.Button text={language === 'en' ? "Contact me" : "Me contacter"} theme={theme} /></div>
                         </div>
                     </div>
-                    <div className={'about-page__tools about-page__infos-displayer about-page__infos-displayer-'+theme}>
-                        <h1>The tools I develop with :</h1>
+                    <div className={'about-page__tools about-page__infos-displayer about-page__infos-displayer-' + theme}>
+                        <h1>{language === 'en' ? 'The tools I develop with :' : 'Mes outils de développement :'}</h1>
                         {!devTools ? <Components.LoadingLogo /> :
                             Array.from(partition(devTools, (item) => item.type)).map(([type, tools]) =>
-                                <div className={'tools-section tools-section-'+theme}>
-                                    <p>{title_map[type]}</p>
+                                <div className={'tools-section tools-section-' + theme}>
+                                    <p>{language === 'en' ? title_map_en[type] : title_map_fr[type]}</p>
                                     <div className='dev-tools__displayer'>
                                         {tools.map((tool) =>
                                             <img src={Assets.dev_tools_map[tool.name]} alt={tool.name} />

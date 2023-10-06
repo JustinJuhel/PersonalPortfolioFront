@@ -22,20 +22,22 @@
 }
 
 .nav-btn {
-    padding: 4rem 0rem;
+    padding: 1rem 2rem;
 
+    transform: rotate(-90deg);
     box-shadow: -8px 8px 16px 0px rgba(0, 0, 0, 0.25);
 }
 
 .nav-btn>p {
+    white-space: nowrap;
     color: var(--color-tertiary);
     font-family: var(--font-paragraph);
     font-size: 1.5rem;
     font-style: normal;
+    text-align: center;
     font-weight: 300;
-    line-height: 115%;
 
-    transform: rotate(-90deg);
+    /* border: 1px solid white; */
 }
 
 .nav-btn-light>p {

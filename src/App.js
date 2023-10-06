@@ -14,21 +14,27 @@ const App = () => {
         } else {
             setTheme('light');
         }
-        console.log("theme : " + theme)
     };
-    // to let the change take place immediatly
-    useEffect(() => {
-        document.body.className = theme;
-    }, [theme]);
+
+    const [language, setLanguage] = useState('en');
+    const toggleLanguage = () => {
+        if (language === 'en') {
+            setLanguage('fr');
+        } else {
+            setLanguage('en');
+        }
+        console.log(language)
+    }
+
     return (
             <ParallaxProvider>
                 <BrowserRouter>
-                    <Components.Navbar theme={theme} toggleTheme={toggleTheme} />
+                    <Components.Navbar theme={theme} toggleTheme={toggleTheme} language={language} toggleLanguage={toggleLanguage} />
                     <Routes>
-                        <Route path="/" element={<Pages.HomePage theme={theme} />} />
-                        <Route path="/work" element={<Pages.WorkPage theme={theme} />} />
-                        <Route path="/about" element={<Pages.AboutPage theme={theme} />} />
-                        <Route path="/contact" element={<Pages.ContactPage theme={theme} />} />
+                        <Route path="/" element={<Pages.HomePage theme={theme} language={language} />} />
+                        <Route path="/work" element={<Pages.WorkPage theme={theme} language={language} />} />
+                        <Route path="/about" element={<Pages.AboutPage theme={theme} language={language} />} />
+                        <Route path="/contact" element={<Pages.ContactPage theme={theme} language={language} />} />
                     </Routes>
                 </BrowserRouter>
             </ParallaxProvider>

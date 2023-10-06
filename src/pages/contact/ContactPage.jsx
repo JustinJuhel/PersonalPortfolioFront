@@ -3,7 +3,7 @@ import './ContactPage.css';
 import * as Components from '../../components';
 import { Parallax } from 'react-scroll-parallax';
 
-const ContactPage = ({ theme }) => {
+const ContactPage = ({ theme, language }) => {
 
     // défilement en haut de la page
     window.scrollTo({
@@ -32,7 +32,11 @@ const ContactPage = ({ theme }) => {
             </div>
             <div className={'contact-page__header contact-page__header-' + theme}>
                 <Parallax translateY={['0px', '200px']}>
-                    <p>Don’t hesitate to contact me of you have a question or want me to work for you !</p>
+                    {
+                        language==='en'?<p>Don’t hesitate to contact me of you have a question or want me to work for you !</p>:
+                        <p>N'hésitez pas à me contacter si vous avez des questions ou si vous voulez que je travaille pour vous !</p>
+                    }
+                    
                 </Parallax>
             </div>
             <div className='contact-page__options'>
