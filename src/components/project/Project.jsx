@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './Project.css';
 import * as Assets from '../../assets';
 import * as Components from '../'
+// MUI Grid Layout Imports
+import { styled } from '@mui/system';
+import Box from '@mui/system/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 
 
 
@@ -25,10 +30,18 @@ const Project = ({ project, id, theme }) => {
 
     const tools_names = project.tools.split(",");
 
+    let projetButtonFontSize = "2rem";
+    if (window.innerWidth <= 1024) {
+        projetButtonFontSize = "1.2rem";
+    }
+    if (window.innerWidth <=768) {
+        projetButtonFontSize = "1rem";
+    }
+
     const project_name_style = {
         fontFamily: project.name_font,
 
-        fontSize: "2rem",
+        fontSize: projetButtonFontSize,
         fontStyle: "normal",
         fontWeight: 900,
         textAlign: "center",
@@ -38,14 +51,26 @@ const Project = ({ project, id, theme }) => {
         WebkitTextFillColor: "transparent",
     };
 
+    let projectFlexDirection = 'row';
+    if (window.innerWidth>768 && id % 2 === 1) {
+        projectFlexDirection = 'row-reverse';
+    } else if (window.innerWidth<=768) {
+        projectFlexDirection = 'column-reverse';
+    }
+
+    let projectPadding = '0rem 4rem';
+    if (window.innerWidth<=1200) {
+        projectPadding = '0rem 2rem';
+    }
+
     const project_style = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        flexDirection: id % 2 === 1 ? 'row-reverse' : 'row',
+        flexDirection: projectFlexDirection,
         // zIndex: 2,
         gap: '2rem',
-        padding: '0rem 4rem',
+        padding: projectPadding,
         width: '100%',
         transition: 'all 0.1s ease-in-out',
     };
@@ -69,10 +94,14 @@ const Project = ({ project, id, theme }) => {
                     <p>{!project ? <Components.LoadingLogo /> : project.description}</p>
                 </div>
                 <div className='project-infos__tools'>
-                    {!project ? <Components.LoadingLogo /> :
-                        tools_names.map((tool) =>
-                            <img src={Assets.dev_tools_map[tool]} alt={tool} />
-                        )
+                    {!project ? null :
+                        <Box sx={{ flexGrow: 2 }} className='project-infos__tools-box'>
+                            <Grid container spacing={5} columns={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 8 }} className='project-infos__tools-grid'>
+                                {tools_names.map((tool) =>
+                                    <img src={Assets.dev_tools_map[tool]} alt={tool} />
+                                )}
+                            </Grid>
+                        </Box>
                     }
                 </div>
             </div>

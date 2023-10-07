@@ -9,6 +9,7 @@
     border: none;
     backdrop-filter: blur(2rem);
     background: var(--white-10);
+    z-index: 2;
 
     transition: all 0.1s ease-in-out;
 
@@ -97,12 +98,30 @@
 .project-infos__tools {
     display: flex;
     flex-direction: row;
-    width: 100%;
     justify-content: center;
-    gap: 3rem;
+    align-items: center;
+
+    /* border: 1px solid black; */
 }
 
-.project-infos__tools>img {
+.project-infos__tools-box {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.project-infos__tools-grid {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    /* border: 1px solid blue; */
+}
+
+.project-infos__tools-grid>img {
     height: 3rem;
 }
 
@@ -190,4 +209,42 @@
 
 .project-modal__single-image-light>p {
     color: var(--white-100);
+}
+
+@media screen and (max-width:1200px) {
+    .project-infos__tools-grid {
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .project-logo-button>img {
+        width: 6rem;
+    }
+
+    .project-infos__desc>p {
+        max-width: 90%;
+    }
+    .project-infos {
+        padding: 1rem;
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .project-logo-button>img {
+        width: 4rem;
+    }
+    .project-infos__tools-grid>img {
+        height: 2rem;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .project-infos__desc>p {
+        max-width: 100%;
+    }
+    .project-infos {
+        max-width: 100%;
+    }
 }
