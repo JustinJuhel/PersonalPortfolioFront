@@ -32,7 +32,7 @@
 }
 
 .home-page__main-bowl {
-    width: 40%;
+    width: 35%;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -61,15 +61,16 @@
 }
 
 .justin {
-    left: 20%;
-    top: 20%;
+    left: 55%;
+    top: 50%;
+    transform: translate(-100%, -100%);
 
     font-weight: 500;
 }
 
 .juhel {
     left: 45%;
-    top: 45%;
+    top: 50%;
 
     font-weight: 700;
 }
@@ -126,37 +127,84 @@
     color: var(--color-secondary);
 }
 
-@media screen and (max-width:2000px) {
+@media screen and (max-width:1600px) {
     .home-page__main-bowl {
-        width: 35%;
+        width: 40%;
     }
-
     .my-name {
-        font-size: 16rem;
-    }
-
-    .justin {
-        top: 10%;
-        left: 10%;
+        font-size: 14rem;
     }
 }
 
-@media screen and (max-width:1750px) {
-    .justin {
-        left: 12.5%;
+@media screen and (max-width:1200px) {
+    .home-page__main-bowl {
+        width: 40%;
+    }
+    .my-name {
+        font-size: 12rem;
     }
 }
 
+@media screen and (max-width:1024px) {
+    .my-name {
+        font-size: 10rem;
+    }
+    .my-job {
+        font-size: 1rem;
+    }
+}
 
+@media screen and (max-width:850px) {
+    .my-name {
+        font-size: 8rem;
+    }
+    .my-job {
+        font-size: 0.8rem;
+    }
+}
 
+@media screen and (max-width:650px) {
+    .my-name {
+        font-size: 6rem;
+    }
+    .my-job {
+        font-size: 0.6rem;
+    }
+}
 
+@media screen and (max-width:550px) {
+    .my-name {
+        font-size: 4rem;
+    }
+    .my-job {
+        font-size: 0.4rem;
+    }
+}
 
+@media screen and (max-width:425px) {
+    .home-page__main-bowl {
+        width: 60%;
+    }
+    .my-name {
+        font-size: 6rem;
+    }
+    .justin {
+        top: 70%;
+        left: 40%;
+        transform: rotate(90deg) translate(-100%,100%);
+    }
+    .juhel {
+        top: 60%;
+        left: 40%;
+        transform: rotate(90deg);
+    }
+    .home-page__bottom-line {
+        height: 0.1rem;
+    }
+}
 
-
-
-
-.bowl-transition {
-    width: 100%;
-    height: 100%;
-    background: black;
+@media screen and (max-width:375px) {
+    .my-name {
+        font-size: 5rem;
+    }
 }

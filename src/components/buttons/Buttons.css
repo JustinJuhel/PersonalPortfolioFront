@@ -84,7 +84,7 @@
     /* border: 1px solid white; */
 }
 
-.light-mode-button>svg {
+.light-mode-button svg {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -224,4 +224,91 @@
 
 .button-with-icon>img {
     height: 3rem;
+}
+
+@media screen and (max-width:768px) {
+
+    /* annulation des effets de hover */
+    .button-dark:hover {
+        background: var(--black-10);
+    }
+
+    .button-light:hover {
+        background: var(--black-25);
+    }
+
+    .nav-btn:hover>p {
+        color: var(--color-primary);
+    }
+
+    .light-mode-button:hover svg .sun-rays {
+        transform-origin: center center;
+        animation: none;
+    }
+
+    .moon:hover svg path {
+        d: path("M21.5774 18.9386C21.5774 23.0719 24.928 26.4225 29.0612 26.4225C29.8173 26.4225 30.5472 26.3107 31.2352 26.1022C30.3038 29.1752 27.4491 31.4118 24.072 31.4118C19.9388 31.4118 16.5881 28.0613 16.5881 23.928C16.5881 20.5508 18.825 17.6961 21.898 16.7647C21.6895 17.4527 21.5774 18.1825 21.5774 18.9386Z");
+    }
+
+    .contact-button:hover {
+        animation: none;
+    }
+
+    .contact-button:hover>p {
+        color: var(--color-primary);
+        animation: none;
+    }
+
+    .about-me-button-light:hover {
+        background: var(--white-10);
+    }
+}
+
+@media screen and (max-width:768px) {
+    .nav-btn {
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-btn>p {
+        font-size: 1rem;
+    }
+
+    .light-mode-button {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .language-button {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .nav-btn {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .nav-btn>p {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .nav-btn {
+        transform: rotate(0deg);
+    }
+}
+
+@media screen and (max-width:375px) {
+    .nav-btn>p {
+        font-size: 0.6rem;
+    }
+    .language-button {
+        font-size: 0.6rem;
+    }
+    .light-mode-button {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
 }
