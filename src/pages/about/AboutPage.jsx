@@ -68,7 +68,7 @@ const AboutPage = ({ theme }) => {
     let navigate = useNavigate();
     return (
 
-        <div className={'about-page about-page-' + theme}>
+        <div className={`about-page about-page-${theme}`}>
 
             <div className={'about-page__background-gradients about-page__background-gradients-' + theme}></div>
 
@@ -111,4 +111,5 @@ const AboutPage = ({ theme }) => {
     )
 }
 
+// export default transition(AboutPage)
 export { AboutPage }

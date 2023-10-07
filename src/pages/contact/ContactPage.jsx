@@ -26,7 +26,7 @@ const ContactPage = ({ theme }) => {
     }
 
     return (
-        <div className={'contact-page contact-page-' + theme}>
+        <div className={`contact-page contact-page-${theme}`}>
 
             <div className={'contact-page__background-gradients contact-page__background-gradients-' + theme}></div>
 
@@ -36,10 +36,10 @@ const ContactPage = ({ theme }) => {
             <div className={'contact-page__header contact-page__header-' + theme}>
                 <Parallax translateY={['0px', '200px']}>
                     {
-                        language==='en'?<p>Don’t hesitate to contact me of you have a question or want me to work for you !</p>:
-                        <p>N'hésitez pas à me contacter si vous avez des questions ou si vous voulez que je travaille pour vous !</p>
+                        language === 'en' ? <p>Don’t hesitate to contact me of you have a question or want me to work for you !</p> :
+                            <p>N'hésitez pas à me contacter si vous avez des questions ou si vous voulez que je travaille pour vous !</p>
                     }
-                    
+
                 </Parallax>
             </div>
             <div className='contact-page__options'>
@@ -56,4 +56,5 @@ const ContactPage = ({ theme }) => {
     )
 }
 
+// export default transition(ContactPage)
 export { ContactPage }

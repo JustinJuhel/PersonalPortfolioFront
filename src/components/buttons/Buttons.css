@@ -111,6 +111,15 @@
     }
 }
 
+.moon:hover svg path {
+    d: path("M26.4116 16.574C28.5 17.5 29.7605 19.2717 30.4116 20.574C31.0627 21.8762 31.4286 24 31 25.5C30 29 27.2878 31 23.5 31C19.3668 31 16 27.6353 16 23.502C16 20.1248 18.1251 17.3041 21.3099 16.3387C22.4116 16.0048 24.7308 15.8287 26.4116 16.574Z");
+    stroke: "#384B6B";
+    stroke-width: "2.29412";
+    stroke-linecap: "round";
+    stroke-linejoin: "round";
+    transition: 0.2s;
+}
+
 .contact-button {
     padding: 1rem 4em;
     border-radius: 2rem;
@@ -188,7 +197,7 @@
 }
 
 .about-me-button-light {
-    background:var(--white-10);
+    background: var(--white-10);
     color: var(--white-100);
 }
 
@@ -215,12 +224,4 @@
 
 .button-with-icon>img {
     height: 3rem;
-}
-
-.moon {
-    transition: clip-path 0.3s ease-in-out
-}
-
-.moon:hover {
-    clip-path: circle(50% center);
 }

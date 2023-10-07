@@ -32,7 +32,7 @@ const App = () => {
         }
     }
 
-    let theme=null;
+    let theme = null;
     if (isDark) {
         theme = 'dark';
     } else {
@@ -43,16 +43,16 @@ const App = () => {
         <ParallaxProvider>
             <BrowserRouter>
                 <Components.Navbar theme={theme} toggleTheme={toggleTheme} language={language} toggleLanguage={toggleLanguage} />
-                <Routes>
-                    <Route path="/" element={<Pages.HomePage theme={theme} />} />
-                    <Route path="/:lang/work" element={<Pages.WorkPage theme={theme} />} />
-                    <Route path="/:lang/about" element={<Pages.AboutPage theme={theme} language={language} />} />
-                    <Route path="/:lang/contact" element={<Pages.ContactPage theme={theme} language={language} />} />
-                    <Route path="/:lang/test" element={<Test />} />
-                    <Route path="/:lang" element={<Pages.HomePage theme={theme} />} />
-                </Routes>
+                        <Routes>
+                            <Route path="/" element={<Pages.HomePage theme={theme} />} />
+                            <Route path="/:lang/work" element={<Pages.WorkPage theme={theme} />} />
+                            <Route path="/:lang/about" element={<Pages.AboutPage theme={theme} language={language} />} />
+                            <Route path="/:lang/contact" element={<Pages.ContactPage theme={theme} language={language} />} />
+                            <Route path="/:lang/test" element={<Test />} />
+                            <Route path="/:lang" element={<Pages.HomePage theme={theme} />} />
+                        </Routes>
             </BrowserRouter>
-        </ParallaxProvider>
+        </ParallaxProvider >
     )
 }
 

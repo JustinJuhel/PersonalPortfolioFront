@@ -15,9 +15,9 @@ const LanguageButton = ({ theme, language }) => {
     return (
         <div className={'language-button button language-button-' + theme + ' button-' + theme}>
             {
-                language==='en'?<p>FR</p>:<p>EN</p>
+                language === 'en' ? <p>FR</p> : <p>EN</p>
             }
-            
+
         </div>
     )
 }
@@ -45,9 +45,11 @@ const LightModeButton = ({ theme }) => {
                         </g>
                     </svg>
                     :
-                    <svg className='moon' xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-                        <path d="M21.5774 18.9386C21.5774 23.0719 24.928 26.4225 29.0612 26.4225C29.8173 26.4225 30.5472 26.3107 31.2352 26.1022C30.3038 29.1752 27.4491 31.4118 24.072 31.4118C19.9388 31.4118 16.5881 28.0613 16.5881 23.928C16.5881 20.5508 18.825 17.6961 21.898 16.7647C21.6895 17.4527 21.5774 18.1825 21.5774 18.9386Z" stroke="#C3D3EE" stroke-width="2.29412" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+                    <div className="moon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M21.5774 18.9386C21.5774 23.0719 24.928 26.4225 29.0612 26.4225C29.8173 26.4225 30.5472 26.3107 31.2352 26.1022C30.3038 29.1752 27.4491 31.4118 24.072 31.4118C19.9388 31.4118 16.5881 28.0613 16.5881 23.928C16.5881 20.5508 18.825 17.6961 21.898 16.7647C21.6895 17.4527 21.5774 18.1825 21.5774 18.9386Z" stroke="#C3D3EE" stroke-width="2.29412" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
                 }
             </div>
         </div>
@@ -56,7 +58,7 @@ const LightModeButton = ({ theme }) => {
 
 const ContactButton = ({ text, theme }) => {
     return (
-        <div className={'contact-button button button-'+theme}>
+        <div className={'contact-button button button-' + theme}>
             <p>{text}</p>
         </div>
     )
@@ -64,7 +66,7 @@ const ContactButton = ({ text, theme }) => {
 
 const Button = ({ text, theme }) => {
     return (
-        <div className={'about-me-button button about-me-button-'+theme}>
+        <div className={'about-me-button button about-me-button-' + theme}>
             <p>{text}</p>
         </div>
     )

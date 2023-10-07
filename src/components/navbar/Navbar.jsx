@@ -1,7 +1,7 @@
 import React from 'react';
 import './Navbar.css'
 import * as Components from '../';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = ({ theme, language, toggleTheme, toggleLanguage }) => {
     let newLanguage = null;

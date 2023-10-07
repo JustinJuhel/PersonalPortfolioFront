@@ -20,27 +20,30 @@ const WorkPage = ({ theme }) => {
         axios.get(`http://localhost:8000/projects/get?lang=${language}`).then(data => data.data).then(data => { setProjects(data.data); })
     }, []);
     return (
-        <div className={'work-page work-page-' + theme}>
 
-            <div className={'work-page__background-gradients work-page__background-gradients-' + theme}></div>
+            <div className={`work-page work-page-${theme}`}>
 
-            <div className='work-page__bowl'>
-                <Parallax translateX={['-100px', '50px']}>
-                    <Components.Bowl theme={theme} />
-                </Parallax>
+                <div className={'work-page__background-gradients work-page__background-gradients-' + theme}></div>
+
+                <div className='work-page__bowl'>
+                    <Parallax translateX={['-100px', '50px']}>
+                        <Components.Bowl theme={theme} />
+                    </Parallax>
+                </div>
+                <div className={'work-page__title work-page__title-' + theme}><h1>{language === 'en' ? 'Work' : 'Travail'}</h1></div>
+                <div className='work-page__projects-container'>
+                    {
+                        !projects ? <Components.LoadingLogo /> :
+                            projects.map((project, index) =>
+                                <Components.Project project={project} id={index} theme={theme} />
+                            )
+                    }
+                </div>
+
             </div>
-            <div className={'work-page__title work-page__title-' + theme}><h1>{language === 'en' ? 'Work' : 'Travail'}</h1></div>
-            <div className='work-page__projects-container'>
-                {
-                    !projects ? <Components.LoadingLogo /> :
-                        projects.map((project, index) =>
-                            <Components.Project project={project} id={index} theme={theme} />
-                        )
-                }
-            </div>
 
-        </div>
     )
 }
 
+// export default transition(WorkPage)
 export { WorkPage }
