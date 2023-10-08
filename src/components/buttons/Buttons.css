@@ -121,7 +121,7 @@
 }
 
 .contact-button {
-    padding: 1rem 4em;
+    padding: 1rem 4rem;
     border-radius: 2rem;
     backdrop-filter: blur(2rem);
 
@@ -282,6 +282,14 @@
         padding: 0.5rem 0.75rem;
         font-size: 0.8rem;
     }
+
+    .contact-button {
+        padding: 1rem 2rem;
+    }
+
+    .contact-button>p {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width:575px) {
@@ -298,15 +306,25 @@
     .nav-btn {
         transform: rotate(0deg);
     }
+
+    .contact-button {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .contact-button>p {
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (max-width:375px) {
     .nav-btn>p {
         font-size: 0.6rem;
     }
+
     .language-button {
         font-size: 0.6rem;
     }
+
     .light-mode-button {
         width: 1.6rem;
         height: 1.6rem;
