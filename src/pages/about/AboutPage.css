@@ -74,6 +74,7 @@
 .about-page__profile-picture>img {
     width: 100%;
     height: 100%;
+    z-index: 1;
     object-fit: cover;
 }
 
@@ -153,7 +154,12 @@
 .tools-section {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
+    width: 100%;
+
+    /* border: 1px solid red; */
 }
 
 .about-page__tools p {
@@ -164,6 +170,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    /* border: 1px solid red; */
 }
 
 .tools-section-light p {
@@ -172,12 +180,93 @@
 
 .dev-tools__displayer {
     display: flex;
-    flex-direction: row;
-    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+
+    /* border: 1px solid white; */
 }
 
-.dev-tools__displayer>img {
+.dev-tools__displayer__grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+    gap: 2rem;
+
+    /* border: 1px solid red; */
+
+}
+
+.dev-tools__displayer__single-tool>img {
     height: 3rem;
     width: auto;
     object-fit: contain;
+
+    /* border: 1px solid red; */
+}
+
+@media screen and (max-width:1024px) {
+    .about-page__bowl {
+        top: -12rem;
+        left: -25%;
+    }
+    .about-page__title {
+        padding: 2rem 6rem;
+        font-size: 8rem;
+    }
+    .about-page__infos {
+        top: -4rem;
+        gap: 4rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .about-page__bowl {
+        top: -18rem;
+        left: -45%;
+    }
+    .about-page__title {
+        padding: 2rem 4rem;
+        font-size: 6rem;
+    }
+    .about-page__profile-picture {
+        margin-top: 6rem;
+        width: 16rem;
+        height: 16rem;
+    }
+    .about-page__infos {
+        flex-direction: column;
+        padding: 0rem 4rem;
+    }
+    .about-page__infos-displayer {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .about-page__bowl {
+        top: -45%;
+        left: -60%;
+    }
+    .about-page__title {
+        padding: 4rem 2rem;
+        font-size: 4rem;
+    }
+    .about-page__profile-picture {
+        margin-top: 4rem;
+        width: 12rem;
+        height: 12rem;
+    }
+    .about-page__infos {
+        top: -2rem;
+        gap: 2rem;
+        padding: 0rem 2rem;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .about-page__bowl {
+        top: -45%;
+        left: -80%;
+    }
 }

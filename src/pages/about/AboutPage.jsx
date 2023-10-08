@@ -5,6 +5,11 @@ import * as Assets from '../../assets';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Parallax } from 'react-scroll-parallax';
+// MUI Grid Layout Imports
+import { styled } from '@mui/system';
+import Box from '@mui/system/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 
 
 function partition(data, func) {
@@ -96,9 +101,15 @@ const AboutPage = ({ theme }) => {
                                 <div className={'tools-section tools-section-' + theme}>
                                     <p>{language === 'en' ? title_map_en[type] : title_map_fr[type]}</p>
                                     <div className='dev-tools__displayer'>
-                                        {tools.map((tool) =>
-                                            <img src={Assets.dev_tools_map[tool.name]} alt={tool.name} />
-                                        )}
+                                        <Box sx={{ flexGrow: 2 }}>
+                                            <Grid container alignItems='center' spacing={0} columns={{ xs: 2, sm: 3, md: 4, lg: 6, xl: 9 }} className='dev-tools__displayer__grid'>
+                                                {tools.map((tool) =>
+                                                    <Grid item align="center" xs={1} sm={1} md={1} lg={1} className='dev-tools__displayer__single-tool'>
+                                                        <img src={Assets.dev_tools_map[tool.name]} alt={tool.name} />
+                                                    </Grid>
+                                                )}
+                                            </Grid>
+                                        </Box>
                                     </div>
                                 </div>
                             )}
