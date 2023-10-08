@@ -3,8 +3,10 @@ import * as CodeEditors from './dev_tools/code_editors';
 import * as CommunicationTools from './dev_tools/communication';
 import * as DesignTools from './dev_tools/design';
 import * as Languages from './dev_tools/languages';
+import * as Others from './dev_tools/others';
 import * as CSLeague from './projects/cs_league';
 import * as MonNouveauSite from './projects/mon_nouveau_site';
+import * as MyPortfolioWebsite from './projects/my_portfolio_website';
 
 // creating the maps to get an easy access to the data
 const dev_tools_map = {
@@ -20,16 +22,19 @@ const dev_tools_map = {
     java: Languages.java,
     javascript: Languages.javascript,
     typescript: Languages.typescript,
-    react: Languages.react
+    react: Languages.react,
+    db_browser_for_sqlite: Others.db_browser_for_sqlite,
 }
 const project_logos_map = {
     cs_league: CSLeague.logo,
-    mon_nouveau_site: MonNouveauSite.logo
+    mon_nouveau_site: MonNouveauSite.logo,
+    my_portfolio_website: MyPortfolioWebsite.logo,
 }
 
 const project_pictures_map = {
     cs_league: [CSLeague.pic1, CSLeague.pic2, CSLeague.pic3],
-    mon_nouveau_site: [MonNouveauSite.pic1, MonNouveauSite.pic2, MonNouveauSite.pic3, MonNouveauSite.pic4]
+    mon_nouveau_site: [MonNouveauSite.pic1, MonNouveauSite.pic2, MonNouveauSite.pic3, MonNouveauSite.pic4],
+    my_portfolio_website: [MyPortfolioWebsite.pic1, MyPortfolioWebsite.pic2, MyPortfolioWebsite.pic3, MyPortfolioWebsite.pic4, MyPortfolioWebsite.pic5, MyPortfolioWebsite.pic6],
 }
 
 // exporting the profile picture

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Project.css';
 import * as Assets from '../../assets';
-import * as Components from '../'
+import * as Components from '../';
+import { useParams } from 'react-router-dom';
 // MUI Grid Layout Imports
 import { styled } from '@mui/system';
 import Box from '@mui/system/Box';
@@ -118,6 +119,9 @@ const Project = ({ project, id, theme }) => {
 
 const ProjectModal = ({ project, theme }) => {
 
+    const params = useParams()
+    const language = params.lang ?? "fr";
+
     if (!project) {
         return (<div><p>This project is invalid</p></div>)
     }
@@ -161,8 +165,8 @@ const ProjectModal = ({ project, theme }) => {
                     )}
             </div>
             <div className='project-modal__buttons'>
-                <Components.ButtonIcon text="Github Repository" iconSrc={Assets.dev_tools_map.github} url={project.github_repo_url} />
-                <Components.ButtonIcon text="Visit Website" iconSrc={Assets.project_logos_map[project.logo]} url={project.website_url} />
+                <Components.ButtonIcon text={language==='en'?"Github Repository":"Dépôt GitHub"} iconSrc={Assets.dev_tools_map.github} url={project.github_repo_url} />
+                <Components.ButtonIcon text={language==='en'?"Visit Website":"Visiter le site"} iconSrc={Assets.project_logos_map[project.logo]} url={project.website_url} />
             </div>
             {pictures.length != pictures_captions.length ? <p>Vous devez fournir autant de commentaires que d'images !</p> :
                 pictures.length === 0 ? null :

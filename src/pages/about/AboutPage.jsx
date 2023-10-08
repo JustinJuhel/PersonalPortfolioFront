@@ -60,14 +60,16 @@ const AboutPage = ({ theme }) => {
         "code_editor": "Code Editors",
         "communication_tool": "Communication",
         "design_tool": "Design",
-        "language": "Languages"
+        "language": "Languages",
+        "others": "Others",
     }
 
     const title_map_fr = {
         "code_editor": "Editeurs de code",
         "communication_tool": "Communication",
         "design_tool": "Design",
-        "language": "Langages"
+        "language": "Langages",
+        "others": "Autres",
     }
 
     let navigate = useNavigate();
