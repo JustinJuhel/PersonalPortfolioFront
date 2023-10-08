@@ -34,7 +34,7 @@ const Project = ({ project, id, theme }) => {
     if (window.innerWidth <= 1024) {
         projetButtonFontSize = "1.2rem";
     }
-    if (window.innerWidth <=768) {
+    if (window.innerWidth <= 768) {
         projetButtonFontSize = "1rem";
     }
 
@@ -52,14 +52,14 @@ const Project = ({ project, id, theme }) => {
     };
 
     let projectFlexDirection = 'row';
-    if (window.innerWidth>768 && id % 2 === 1) {
+    if (window.innerWidth > 768 && id % 2 === 1) {
         projectFlexDirection = 'row-reverse';
-    } else if (window.innerWidth<=768) {
+    } else if (window.innerWidth <= 768) {
         projectFlexDirection = 'column-reverse';
     }
 
     let projectPadding = '0rem 4rem';
-    if (window.innerWidth<=1200) {
+    if (window.innerWidth <= 1200) {
         projectPadding = '0rem 2rem';
     }
 
@@ -128,10 +128,18 @@ const ProjectModal = ({ project, theme }) => {
     const pictures = Assets.project_pictures_map[project.logo];
     const indexList = Array.from({ length: pictures.length }, (_, index) => index);
 
+    let modalTitleFontSize = "3rem";
+
+    if (window.innerWidth <= 425) {
+        modalTitleFontSize = "1.6rem";
+    } else if (window.innerWidth <= 768) {
+        modalTitleFontSize = "2rem";
+    }
+
     const project_name_style = {
         fontFamily: project.name_font,
 
-        fontSize: "3rem",
+        fontSize: modalTitleFontSize,
         fontStyle: "normal",
         fontWeight: 900,
         textAlign: "center",

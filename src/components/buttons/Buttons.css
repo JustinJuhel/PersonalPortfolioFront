@@ -290,6 +290,18 @@
     .contact-button>p {
         font-size: 1.5rem;
     }
+
+    .button-with-icon:hover {
+        background: var(--white-05);
+    }
+
+    .button-with-icon>p {
+        font-size: 1rem;
+    }
+
+    .button-with-icon>img {
+        height: 2rem;
+    }
 }
 
 @media screen and (max-width:575px) {

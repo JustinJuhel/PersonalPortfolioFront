@@ -43,3 +43,27 @@
     cursor: pointer;
     background: transparent;
 }
+
+@media screen and (max-width:1200px) {
+    .modal {
+        padding: 8rem;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .modal {
+        padding: 6rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .modal {
+        padding: 3rem 3rem 3rem 5rem;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .modal {
+        padding: 5rem 2rem 2rem 2rem;
+    }
+}

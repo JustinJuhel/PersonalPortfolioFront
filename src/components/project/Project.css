@@ -215,6 +215,10 @@
     .project-infos__tools-grid {
         gap: 2rem;
     }
+
+    .project-modal__content {
+        padding: 3rem;
+    }
 }
 
 @media screen and (max-width:1024px) {
@@ -225,6 +229,7 @@
     .project-infos__desc>p {
         max-width: 90%;
     }
+
     .project-infos {
         padding: 1rem;
         max-width: 90%;
@@ -235,8 +240,48 @@
     .project-logo-button>img {
         width: 4rem;
     }
+
     .project-infos__tools-grid>img {
         height: 2rem;
+    }
+
+    .project-logo-button:hover {
+        background: var(--white-10);
+        transform: scale(1);
+    }
+
+    .project-modal__content {
+        gap: 3rem;
+        padding: 2rem;
+    }
+
+    .project-modal__single-image>img,
+    .project-modal__single-image>p {
+        width: 80%;
+    }
+
+    .project-modal__description>p {
+        font-size: 1.2rem;
+    }
+
+    .project-modal__title {
+        gap: 1rem;
+    }
+
+    .project-modal__title>img {
+        height: 3rem;
+    }
+
+    .project-modal__content {
+        padding: 1.5rem;
+        border-radius: 2rem;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .project-modal__buttons {
+        flex-direction: column;
+        gap: 1rem;
     }
 }
 
@@ -244,7 +289,25 @@
     .project-infos__desc>p {
         max-width: 100%;
     }
+
     .project-infos {
         max-width: 100%;
+    }
+
+    .project-modal__content {
+        gap: 2rem;
+    }
+
+    .project-modal__single-image>img,
+    .project-modal__single-image>p {
+        width: 100%;
+    }
+
+    .project-modal__title>img {
+        height: 2rem;
+    }
+
+    .project-modal__content {
+        padding: 1.5rem;
     }
 }

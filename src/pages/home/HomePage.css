@@ -129,7 +129,7 @@
 
 @media screen and (max-width:1600px) {
     .home-page__main-bowl {
-        width: 40%;
+        width: 35%;
     }
     .my-name {
         font-size: 14rem;
@@ -137,9 +137,6 @@
 }
 
 @media screen and (max-width:1200px) {
-    .home-page__main-bowl {
-        width: 40%;
-    }
     .my-name {
         font-size: 12rem;
     }
