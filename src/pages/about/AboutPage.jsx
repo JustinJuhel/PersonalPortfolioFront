@@ -37,14 +37,14 @@ const AboutPage = ({ theme }) => {
 
     const [devTools, setDevTools] = useState(undefined);
     useEffect(() => {
-        axios.get("http://localhost:8000/devtools/get").then(data => data.data).then(data => { setDevTools(data.data.filter((item) => item.used === "used")); })
+        axios.get(`http://${process.env.REACT_APP_BACKEND_ROOT}:8000/devtools/get`).then(data => data.data).then(data => { setDevTools(data.data.filter((item) => item.used === "used")); })
     }, [])
     // if (devTools) {
     //     console.log(partition(devTools, (item) => item.type))
     // }
     const [aboutMeMap, setAboutMeMap] = useState(undefined);
     useEffect(() => {
-        axios.get(`http://localhost:8000/about/get?lang=${language}`).then(data => data.data).then(data => setAboutMeMap(data.data))
+        axios.get(`http://${process.env.REACT_APP_BACKEND_ROOT}:8000/about/get?lang=${language}`).then(data => data.data).then(data => setAboutMeMap(data.data))
     }, [])
     // if (aboutMeMap) {
     //     console.log(aboutMeMap[0].description.split(";"))

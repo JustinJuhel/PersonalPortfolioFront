@@ -17,7 +17,7 @@ const WorkPage = ({ theme }) => {
 
     const [projects, setProjects] = useState(undefined);
     useEffect(() => {
-        axios.get(`http://localhost:8000/projects/get?lang=${language}`).then(data => data.data).then(data => { setProjects(data.data); })
+        axios.get(`http://${process.env.REACT_APP_BACKEND_ROOT}:8000/projects/get?lang=${language}`).then(data => data.data).then(data => { setProjects(data.data); })
     }, []);
     return (
 
