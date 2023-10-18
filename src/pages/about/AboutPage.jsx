@@ -6,9 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Parallax } from 'react-scroll-parallax';
 // MUI Grid Layout Imports
-import { styled } from '@mui/system';
 import Box from '@mui/system/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
 
@@ -45,7 +43,7 @@ const AboutPage = ({ theme }) => {
     const [aboutMeMap, setAboutMeMap] = useState(undefined);
     useEffect(() => {
         axios.get(`http://${process.env.REACT_APP_BACKEND_ROOT}:8000/about/get?lang=${language}`).then(data => data.data).then(data => setAboutMeMap(data.data))
-    }, [])
+    }, [language])
     // if (aboutMeMap) {
     //     console.log(aboutMeMap[0].description.split(";"))
     // }
@@ -81,7 +79,7 @@ const AboutPage = ({ theme }) => {
 
             <div className='about-page__bowl'><Components.Bowl theme={theme} /></div>
             <div className={'about-page__title about-page__title-' + theme}>{language === 'en' ? 'About' : 'A Propos'}</div>
-            <div className='about-page__profile-picture'><img src={Assets.photo_profil_justin} alt="profile-picture" /></div>
+            <div className='about-page__profile-picture'><img src={Assets.photo_profil_justin} alt="profile" /></div>
             <Parallax translateY={['0px', '-150px']}>
                 <div className='about-page__infos'>
                     <div className={'about-page__infos-displayer about-page__infos-displayer-' + theme}>

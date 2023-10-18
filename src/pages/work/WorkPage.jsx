@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './WorkPage.css';
 import * as Components from '../../components';
-import * as Assets from '../../assets';
 import axios from 'axios';
 import { Parallax } from 'react-scroll-parallax';
 import { useParams } from 'react-router-dom';
@@ -18,7 +17,7 @@ const WorkPage = ({ theme }) => {
     const [projects, setProjects] = useState(undefined);
     useEffect(() => {
         axios.get(`http://${process.env.REACT_APP_BACKEND_ROOT}:8000/projects/get?lang=${language}`).then(data => data.data).then(data => { setProjects(data.data); })
-    }, []);
+    }, [language]);
     return (
 
         <div className={`work-page work-page-${theme}`}>

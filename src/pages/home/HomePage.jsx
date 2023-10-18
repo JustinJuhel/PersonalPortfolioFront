@@ -1,7 +1,6 @@
 import React from 'react';
 import './HomePage.css';
 import * as Components from '../../components';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 const HomePage = ({ theme }) => {

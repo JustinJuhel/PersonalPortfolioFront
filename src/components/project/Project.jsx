@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Project.css';
 import * as Assets from '../../assets';
 import * as Components from '../';
 import { useParams } from 'react-router-dom';
 // MUI Grid Layout Imports
-import { styled } from '@mui/system';
 import Box from '@mui/system/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
 
@@ -168,7 +166,7 @@ const ProjectModal = ({ project, theme }) => {
                 <Components.ButtonIcon text={language==='en'?"Github Repository":"Dépôt GitHub"} iconSrc={Assets.dev_tools_map.github} url={project.github_repo_url} />
                 <Components.ButtonIcon text={language==='en'?"Visit Website":"Visiter le site"} iconSrc={Assets.project_logos_map[project.logo]} url={project.website_url} />
             </div>
-            {pictures.length != pictures_captions.length ? <p>Vous devez fournir autant de commentaires que d'images !</p> :
+            {pictures.length !== pictures_captions.length ? <p>Vous devez fournir autant de commentaires que d'images !</p> :
                 pictures.length === 0 ? null :
                     indexList.map((index) =>
                         <div className={"project-modal__single-image project-modal__single-image-" + theme} style={{
@@ -178,7 +176,7 @@ const ProjectModal = ({ project, theme }) => {
                             gap: '0.5rem',
                             width: '100%',
                         }}>
-                            <img src={pictures[index]} alt="additional-picture" />
+                            <img src={pictures[index]} alt="additional-picture-missing" />
                             <p>{pictures_captions[index]}</p>
                         </div>
                     )
