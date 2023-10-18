@@ -29,7 +29,7 @@ const WorkPage = ({ theme }) => {
                     <Components.Bowl theme={theme} />
                 </Parallax>
             </div>
-            <div className={'work-page__title work-page__title-' + theme}><h1>{language === 'en' ? 'Works' : 'Travaux'}</h1></div>
+            <div className={'work-page__title work-page__title-' + theme}><h1>{language === 'en' ? 'Work' : 'Travail'}</h1></div>
             <div className='work-page__projects-container'>
                 {
                     !projects ? <Components.LoadingLogo /> :
