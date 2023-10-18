@@ -3,7 +3,6 @@ import * as CodeEditors from './dev_tools/code_editors';
 import * as CommunicationTools from './dev_tools/communication';
 import * as DesignTools from './dev_tools/design';
 import * as Languages from './dev_tools/languages';
-import * as Others from './dev_tools/others';
 import * as CSLeague from './projects/cs_league';
 import * as MonNouveauSite from './projects/mon_nouveau_site';
 import * as MyPortfolioWebsite from './projects/my_portfolio_website';
@@ -23,7 +22,6 @@ const dev_tools_map = {
     javascript: Languages.javascript,
     typescript: Languages.typescript,
     react: Languages.react,
-    db_browser_for_sqlite: Others.db_browser_for_sqlite,
 }
 const project_logos_map = {
     cs_league: CSLeague.logo,

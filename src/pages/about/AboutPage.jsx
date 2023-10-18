@@ -93,7 +93,7 @@ const AboutPage = ({ theme }) => {
                         }
                         <div className='about-page__contact'>
                             <a className='contact-page__button' href='../../assets/CV_FR.pdf' download><Components.Button text={language === 'en' ? "My CV" : "Mon CV"} theme={theme} /></a>
-                            <div className='contact-page__button' onClick={() => { navigate('/contact') }}><Components.Button text={language === 'en' ? "Contact me" : "Me contacter"} theme={theme} /></div>
+                            <div className='contact-page__button' onClick={() => { navigate(`/${language}/contact`) }}><Components.Button text={language === 'en' ? "Contact me" : "Me contacter"} theme={theme} /></div>
                         </div>
                     </div>
                     <div className={'about-page__tools about-page__infos-displayer about-page__infos-displayer-' + theme}>

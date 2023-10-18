@@ -1,1 +1,0 @@
-export { default as db_browser_for_sqlite } from './db_browser_for_sqlite.png';
