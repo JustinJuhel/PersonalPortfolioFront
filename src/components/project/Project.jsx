@@ -176,7 +176,7 @@ const ProjectModal = ({ project, theme }) => {
                             gap: '0.5rem',
                             width: '100%',
                         }}>
-                            <img src={pictures[index]} alt="additional-picture-missing" />
+                            <img src={pictures[index]} alt="project" />
                             <p>{pictures_captions[index]}</p>
                         </div>
                     )
