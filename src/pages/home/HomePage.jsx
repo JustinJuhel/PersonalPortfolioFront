@@ -8,6 +8,7 @@ const HomePage = ({ theme }) => {
     const params = useParams();
     const language = params.lang ?? "fr";
 
+    
     return (
             <div className={`home-page home-page-${theme}`}>
                 <div className={'home-page__background-gradients home-page__background-gradients-' + theme}></div>
