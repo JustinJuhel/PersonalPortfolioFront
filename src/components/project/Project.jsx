@@ -95,7 +95,7 @@ const Project = ({ project, id, theme }) => {
                 <div className='project-infos__tools'>
                     {!project ? null :
                         <Box sx={{ flexGrow: 2 }} className='project-infos__tools-box'>
-                            <Grid container spacing={5} columns={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 8 }} className='project-infos__tools-grid'>
+                            <Grid container spacing={0} columns={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 8 }} className='project-infos__tools-grid'>
                                 {tools_names.map((tool) =>
                                     <img src={Assets.dev_tools_map[tool]} alt={tool} />
                                 )}

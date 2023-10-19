@@ -104,9 +104,7 @@ const AboutPage = ({ theme }) => {
                                         <Box sx={{ flexGrow: 2 }}>
                                             <Grid container alignItems='center' spacing={0} columns={{ xs: 2, sm: 3, md: 4, lg: 6, xl: 9 }} className='dev-tools__displayer__grid'>
                                                 {tools.map((tool) =>
-                                                    <Grid item align="center" xs={1} sm={1} md={1} lg={1} className='dev-tools__displayer__single-tool'>
-                                                        <img src={Assets.dev_tools_map[tool.name]} alt={tool.name} />
-                                                    </Grid>
+                                                    <img src={Assets.dev_tools_map[tool.name]} alt={tool.name} />
                                                 )}
                                             </Grid>
                                         </Box>
