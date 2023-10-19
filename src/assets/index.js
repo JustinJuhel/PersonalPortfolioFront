@@ -30,7 +30,7 @@ const project_logos_map = {
 }
 
 const project_pictures_map = {
-    cs_league: [CSLeague.pic1, CSLeague.pic2, CSLeague.pic3],
+    cs_league: [CSLeague.pic1, CSLeague.pic2, CSLeague.pic3, CSLeague.pic4, CSLeague.pic5, CSLeague.pic6],
     mon_nouveau_site: [MonNouveauSite.pic1, MonNouveauSite.pic2, MonNouveauSite.pic3, MonNouveauSite.pic4],
     my_portfolio_website: [MyPortfolioWebsite.pic1, MyPortfolioWebsite.pic2, MyPortfolioWebsite.pic3, MyPortfolioWebsite.pic4, MyPortfolioWebsite.pic5, MyPortfolioWebsite.pic6],
 }

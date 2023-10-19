@@ -14,6 +14,8 @@ const WorkPage = ({ theme }) => {
         behavior: 'smooth', // Pour un défilement fluide
     })
 
+    console.log(process.env.REACT_APP_BACKEND_ROOT);
+
     const [projects, setProjects] = useState(undefined);
     useEffect(() => {
         axios.get(`http://${process.env.REACT_APP_BACKEND_ROOT}:8000/projects/get?lang=${language}`).then(data => data.data).then(data => { setProjects(data.data); })

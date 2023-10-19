@@ -166,7 +166,7 @@ const ProjectModal = ({ project, theme }) => {
                 <Components.ButtonIcon text={language==='en'?"Github Repository":"Dépôt GitHub"} iconSrc={Assets.dev_tools_map.github} url={project.github_repo_url} />
                 <Components.ButtonIcon text={language==='en'?"Visit Website":"Visiter le site"} iconSrc={Assets.project_logos_map[project.logo]} url={project.website_url} />
             </div>
-            {pictures.length !== pictures_captions.length ? <p>Vous devez fournir autant de commentaires que d'images !</p> :
+            {pictures.length !== pictures_captions.length ? <p>Vous devez fournir autant de commentaires que d'images ! Vous avez fourni {pictures.length} images et {pictures_captions.length} descriptions. {pictures_captions}</p> :
                 pictures.length === 0 ? null :
                     indexList.map((index) =>
                         <div className={"project-modal__single-image project-modal__single-image-" + theme} style={{
