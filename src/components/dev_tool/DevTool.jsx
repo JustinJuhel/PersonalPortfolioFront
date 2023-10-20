@@ -3,7 +3,7 @@ import './DevTool.css';
 import * as Assets from '../../assets';
 import { useParams } from 'react-router-dom';
 
-const DevTool = ({ tool }) => {
+const DevTool = ({ tool, theme }) => {
     const params = useParams()
     const language = params.lang ?? "fr";
 
@@ -34,10 +34,10 @@ const DevTool = ({ tool }) => {
             <img src={Assets.dev_tools_map[tool.name]} alt={tool.name} />
             {!modalVisibility ? null :
                 <DevToolModal modalBoolean={modalVisibility}>
-                    <div className='dev-tool__description'>
+                    <div className={`dev-tool__description dev-tool__description__${theme}`}>
                         <p>{tool.display_name}</p>
-                        {language === 'fr'?
-                            <p>{title_map_fr[tool.type]}</p>:
+                        {language === 'fr' ?
+                            <p>{title_map_fr[tool.type]}</p> :
                             <p>{title_map_en[tool.type]}</p>
                         }
                     </div>

@@ -53,9 +53,8 @@ const Project = ({ project, id, theme }) => {
         fontWeight: 900,
         textAlign: "center",
         backgroundClip: "text",
-        background: project.name_color,
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
+        WebkitTextFillColor: project.name_color,
+        WebkitBackgroundClip: "text"
     };
 
     let projectFlexDirection = 'row';
@@ -108,7 +107,7 @@ const Project = ({ project, id, theme }) => {
                     {!project && !devTools ? null :
                         <Box sx={{ flexGrow: 2 }} className='project-infos__tools-box'>
                             <Grid container spacing={0} columns={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 8 }} className='project-infos__tools-grid'>
-                                {devTools.map((tool) => tools_names.includes(tool.name) ? <Components.DevTool tool={tool} /> : null)}
+                                {devTools.map((tool) => tools_names.includes(tool.name) ? <Components.DevTool tool={tool} theme={theme} /> : null)}
                             </Grid>
                         </Box>
                     }

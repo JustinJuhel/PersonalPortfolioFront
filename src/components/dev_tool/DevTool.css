@@ -45,7 +45,10 @@
     transform: translateX(-50%);
 
     animation: dev-tool_hovering 0.1s forwards ease-in-out;
+}
 
+.dev-tool__description__dark {
+    background: var(--white-10);
 }
 
 .dev-tool__description p {
