@@ -163,7 +163,7 @@
 }
 
 .about-page__tools p {
-    color: var(--color-primary);
+    /* color: var(--color-primary); */
     text-align: center;
     font-family: var(--font-paragraph);
     font-size: 1rem;
@@ -191,7 +191,7 @@
     align-items: center;
     justify-content: center;
     /* width: 100%; */
-    gap: 2rem;
+    gap: 3rem;
 
     /* border: 1px solid red; */
 

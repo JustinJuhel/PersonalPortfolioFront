@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Project.css';
 import * as Assets from '../../assets';
 import * as Components from '../';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 // MUI Grid Layout Imports
 import Box from '@mui/system/Box';
 import Grid from '@mui/material/Grid';
@@ -16,6 +17,12 @@ const Project = ({ project, id, theme }) => {
         setModal(!modal);
     };
 
+    const [devTools, setDevTools] = useState(undefined);
+    useEffect(() => {
+        axios.get(`http://${process.env.REACT_APP_BACKEND_ROOT}:8000/devtools/get`).then(data => data.data).then(data => { setDevTools(data.data.filter((item) => item.used === "used")); })
+        // axios.get(`http://localhost:8000/devtools/get`).then(data => data.data).then(data => { setDevTools(data.data.filter((item) => item.used === "used")); })
+    }, []);
+
     const closeModal = () => {
         setModal(false);
     };
@@ -28,6 +35,7 @@ const Project = ({ project, id, theme }) => {
     };
 
     const tools_names = project.tools.split(",");
+
 
     let projetButtonFontSize = "2rem";
     if (window.innerWidth <= 1024) {
@@ -74,6 +82,10 @@ const Project = ({ project, id, theme }) => {
         transition: 'all 0.1s ease-in-out',
     };
 
+    if (!devTools) {
+        return <p>Problème d'accès aux devTools.</p>
+    }
+
     return (
         <div className='project' style={project_style}>
             <button className={'project-logo-button project-logo-button-' + theme} onClick={() => {
@@ -93,12 +105,10 @@ const Project = ({ project, id, theme }) => {
                     <p>{!project ? <Components.LoadingLogo /> : project.description}</p>
                 </div>
                 <div className='project-infos__tools'>
-                    {!project ? null :
+                    {!project && !devTools ? null :
                         <Box sx={{ flexGrow: 2 }} className='project-infos__tools-box'>
                             <Grid container spacing={0} columns={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 8 }} className='project-infos__tools-grid'>
-                                {tools_names.map((tool) =>
-                                    <img src={Assets.dev_tools_map[tool]} alt={tool} />
-                                )}
+                                {devTools.map((tool) => tools_names.includes(tool.name) ? <Components.DevTool tool={tool} /> : null)}
                             </Grid>
                         </Box>
                     }
@@ -163,8 +173,8 @@ const ProjectModal = ({ project, theme }) => {
                     )}
             </div>
             <div className='project-modal__buttons'>
-                <Components.ButtonIcon text={language==='en'?"Github Repository":"Dépôt GitHub"} iconSrc={Assets.dev_tools_map.github} url={project.github_repo_url} />
-                <Components.ButtonIcon text={language==='en'?"Visit Website":"Visiter le site"} iconSrc={Assets.project_logos_map[project.logo]} url={project.website_url} />
+                <Components.ButtonIcon text={language === 'en' ? "Github Repository" : "Dépôt GitHub"} iconSrc={Assets.dev_tools_map.github} url={project.github_repo_url} />
+                <Components.ButtonIcon text={language === 'en' ? "Visit Website" : "Visiter le site"} iconSrc={Assets.project_logos_map[project.logo]} url={project.website_url} />
             </div>
             {pictures.length !== pictures_captions.length ? <p>Vous devez fournir autant de commentaires que d'images ! Vous avez fourni {pictures.length} images et {pictures_captions.length} descriptions. {pictures_captions}</p> :
                 pictures.length === 0 ? null :

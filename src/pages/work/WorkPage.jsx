@@ -14,7 +14,7 @@ const WorkPage = ({ theme }) => {
         behavior: 'smooth', // Pour un défilement fluide
     })
 
-    console.log(process.env.REACT_APP_BACKEND_ROOT);
+    // console.log(process.env.REACT_APP_BACKEND_ROOT);
 
     const [projects, setProjects] = useState(undefined);
     useEffect(() => {
@@ -36,7 +36,7 @@ const WorkPage = ({ theme }) => {
                 {
                     !projects ? <Components.LoadingLogo /> :
                         projects.reverse().map((project, index) =>
-                            <Components.Project project={project} id={index} theme={theme} />
+                            <Components.Project project={project} id={index} theme={theme} language={language} />
                         )
                 }
             </div>

@@ -9,20 +9,6 @@ import { Parallax } from 'react-scroll-parallax';
 import Box from '@mui/system/Box';
 import Grid from '@mui/material/Grid';
 
-
-function partition(data, func) {
-    const map = new Map();
-    data.forEach((item) => {
-        let array = map.get(func(item));
-        if (!array) {
-            array = [];
-            map.set(func(item), array);
-        }
-        array.push(item);
-    })
-    return map
-}
-
 const AboutPage = ({ theme }) => {
     const params = useParams()
     const language = params.lang ?? "fr";
@@ -36,40 +22,21 @@ const AboutPage = ({ theme }) => {
     const [devTools, setDevTools] = useState(undefined);
     useEffect(() => {
         axios.get(`http://${process.env.REACT_APP_BACKEND_ROOT}:8000/devtools/get`).then(data => data.data).then(data => { setDevTools(data.data.filter((item) => item.used === "used")); })
+        // axios.get(`http://localhost:8000/devtools/get`).then(data => data.data).then(data => { setDevTools(data.data.filter((item) => item.used === "used")); })
     }, [])
-    // if (devTools) {
-    //     console.log(partition(devTools, (item) => item.type))
-    // }
+
     const [aboutMeMap, setAboutMeMap] = useState(undefined);
     useEffect(() => {
         axios.get(`http://${process.env.REACT_APP_BACKEND_ROOT}:8000/about/get?lang=${language}`).then(data => data.data).then(data => setAboutMeMap(data.data))
+        // axios.get(`http://localhost:8000/about/get?lang=${language}`).then(data => data.data).then(data => setAboutMeMap(data.data))
     }, [language])
-    // if (aboutMeMap) {
-    //     console.log(aboutMeMap[0].description.split(";"))
-    // }
+
     let about_me_map = []
     if (aboutMeMap) {
         about_me_map = aboutMeMap[0].description.split(";");
     }
 
-    // console.log(about_me_map)
-
-    const title_map_en = {
-        "code_editor": "Code Editors",
-        "communication_tool": "Communication",
-        "design_tool": "Design",
-        "language": "Languages",
-        "others": "Others",
-    }
-
-    const title_map_fr = {
-        "code_editor": "Editeurs de code",
-        "communication_tool": "Communication",
-        "design_tool": "Design",
-        "language": "Langages",
-        "others": "Autres",
-    }
-
+    console.log(devTools)
     let navigate = useNavigate();
     return (
 
@@ -97,20 +64,13 @@ const AboutPage = ({ theme }) => {
                     <div className={'about-page__tools about-page__infos-displayer about-page__infos-displayer-' + theme}>
                         <h1>{language === 'en' ? 'The tools I develop with :' : 'Mes outils de développement :'}</h1>
                         {!devTools ? <Components.LoadingLogo /> :
-                            Array.from(partition(devTools, (item) => item.type)).map(([type, tools]) =>
-                                <div className={'tools-section tools-section-' + theme}>
-                                    <p>{language === 'en' ? title_map_en[type] : title_map_fr[type]}</p>
-                                    <div className='dev-tools__displayer'>
-                                        <Box sx={{ flexGrow: 2 }}>
-                                            <Grid container alignItems='center' spacing={0} columns={{ xs: 2, sm: 3, md: 4, lg: 6, xl: 9 }} className='dev-tools__displayer__grid'>
-                                                {tools.map((tool) =>
-                                                    <img src={Assets.dev_tools_map[tool.name]} alt={tool.name} />
-                                                )}
-                                            </Grid>
-                                        </Box>
-                                    </div>
-                                </div>
-                            )}
+                            <Box sx={{ flexGrow: 2 }}>
+                                <Grid container alignItems='center' spacing={0} columns={{ xs: 2, sm: 3, md: 4, lg: 6, xl: 9 }} className='dev-tools__displayer__grid'>
+                                    {devTools.map((tool) =>
+                                        <Components.DevTool tool={tool} />
+                                    )}
+                                </Grid>
+                            </Box>}
                     </div>
                 </div>
             </Parallax>
@@ -120,5 +80,4 @@ const AboutPage = ({ theme }) => {
     )
 }
 
-// export default transition(AboutPage)
 export { AboutPage }
