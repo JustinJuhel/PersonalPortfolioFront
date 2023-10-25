@@ -91,6 +91,10 @@
     /* border: 1px solid white; */
 }
 
+.work-page__projects-container-dark {
+    flex-direction: column-reverse;
+}
+
 @media screen and (max-width:1200px) {
     .work-page__bowl {
         transform: translate(70%, -40%);

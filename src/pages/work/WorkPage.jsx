@@ -31,8 +31,8 @@ const WorkPage = ({ theme }) => {
                     <Components.Bowl theme={theme} />
                 </Parallax>
             </div>
-            <div className={'work-page__title work-page__title-' + theme}><h1>{language === 'en' ? 'Work' : 'Travail'}</h1></div>
-            <div className='work-page__projects-container'>
+            <div className={`work-page__title work-page__title-${theme}`}><h1>{language === 'en' ? 'Work' : 'Travail'}</h1></div>
+            <div className={`work-page__projects-container work-page__projects-container-${theme}`}>
                 {
                     !projects ? <Components.LoadingLogo /> :
                         projects.reverse().map((project, index) =>

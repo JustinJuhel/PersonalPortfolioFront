@@ -18,16 +18,18 @@ const DevTool = ({ tool, theme }) => {
         "design_tool": "Design",
         "language": "Language",
         "integration": "Integration Platform",
-        "javascript environment": "Environnement JavaScript",
+        "javascript environment": "JavaScript Environment",
+        "javascript library": "JavaScript Library",
     }
-
+    
     const title_map_fr = {
         "code_editor": "Editeur de code",
         "communication_tool": "Communication",
         "design_tool": "Design",
         "language": "Langage",
         "integration": "Plateforme d'Intégration",
-        "javascript environment": "JavaScript Environment",
+        "javascript environment": "Environnement JavaScript",
+        "javascript library": "Bibliothèque JavaScript",
     }
     return (
         <div className='dev-tool__container' onMouseEnter={() => { toggleModalVisibility() }} onMouseLeave={() => { toggleModalVisibility() }}>

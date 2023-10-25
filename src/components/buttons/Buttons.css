@@ -306,11 +306,11 @@
 
 @media screen and (max-width:575px) {
     .nav-btn {
-        padding: 0.5rem 0.75rem;
+        padding: 0.5rem 0.75rem !important;
     }
 
     .nav-btn>p {
-        font-size: 0.8rem;
+        font-size: 0.8rem !important;
     }
 }
 
@@ -325,6 +325,9 @@
 
     .contact-button>p {
         font-size: 1.2rem;
+    }
+    .about-me-button {
+        padding: 1rem;
     }
 }
 
@@ -347,7 +350,6 @@
     .nav-btn {
         padding: 0.75rem 1.5rem;
     }
-
 }
 
 @media screen and (max-height:625px) {

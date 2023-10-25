@@ -186,17 +186,24 @@
         font-size: 6rem;
     }
     .justin {
-        top: 70%;
-        left: 40%;
-        transform: rotate(90deg) translate(-100%,100%);
+        top: 28%;
+        left: 18%;
+        transform: translate(0,0);
     }
     .juhel {
-        top: 60%;
-        left: 40%;
-        transform: rotate(90deg);
+        top: 58%;
+        left: 22%;
+    }
+    .home-page__bottom {
+        top: 7%;
+        max-height: 2rem;
     }
     .home-page__bottom-line {
-        height: 0.1rem;
+        width: 75%;
+        height: 0.15rem;
+    }
+    .my-job {
+        font-size: 0.6rem;
     }
 }
 
