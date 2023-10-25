@@ -342,3 +342,16 @@
         height: 1.6rem;
     }
 }
+
+@media screen and (max-height:750px) {
+    .nav-btn {
+        padding: 0.75rem 1.5rem;
+    }
+
+}
+
+@media screen and (max-height:625px) {
+    .nav-btn>p {
+        font-size: 1.25rem;
+    }
+}

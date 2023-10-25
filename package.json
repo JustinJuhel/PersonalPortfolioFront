@@ -33,8 +33,9 @@
     "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "upload": "yarn build && aws s3 sync build/ s3://justinportfoliofront",
-    "upload:direct": "aws s3 sync build/ s3://justinportfoliofront"
+    "upload": "yarn build && aws s3 sync build/ s3://portfolio.justin-juhel.fr",
+    "upload:direct": "aws s3 sync build/ s3://portfolio.justin-juhel.fr",
+    "maintenance":"aws s3 sync maintenance/ s3://portfolio.justin-juhel.fr"
   },
   "eslintConfig": {
     "extends": [

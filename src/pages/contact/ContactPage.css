@@ -95,7 +95,7 @@
     display: flex;
     position: relative;
 
-    width: 45%;
+    width: 25%;
     min-height: 20rem;
 
     margin-bottom: 24rem;
@@ -135,6 +135,18 @@
     position: absolute;
     right: 0;
     bottom: 0;
+}
+
+@media screen and (max-width:2000px) {
+    .contact-page__options {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width:1440px) {
+    .contact-page__options {
+        width: 45%;
+    }
 }
 
 @media screen and (max-width:1200px) {
